@@ -39,10 +39,7 @@ NETMASK=255.255.255.0
 ```
 sudo nmcli con reload
 ```
-**Par la suite, on peut faire un**
-```
-ip a
-```
+**Par la suite, on peut faire un :** ```ip a``` **.**
 **Pour voir si notre IP à bien été changée.**
 **Voila ce que j'obtiens pour la machine 1 :**
 ```
@@ -72,7 +69,6 @@ ping 10.1.1.2
 ```
 **Voila le resultat que l'on obtient :**
 ```
-ping 10.1.1.2
 PING 10.1.1.2 (10.1.1.2) 56(84) bytes of data.
 64 bytes from 10.1.1.2: icmp_seq=1 ttl=64 time=2.47 ms
 ^C
@@ -83,8 +79,24 @@ rtt min/avg/max/mdev = 2.472/2.472/2.472/0.000 ms
 ### A l'aide de Wireshark
 Le protocole utilisé pour la capture est le protocole ICMP
 ## II. Ajoutons un switch
-**D'abord on ajoute la machine 3 (clone de la machine principale comme les autres) et on change son adresse IP**
-```sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3```
+**Addresse MAC des machines : (avec** ```ip a ``` **)**
+**Node 1 :**
+```
+link/ether 08:00:27:da:e1:07
+```
+**Node 2 :**
+```
+link/ether 08:00:27:cb:68:e1
+```
+**Node 3 : (Ajoutée juste après)**
+```
+08:00:27:1b:1a:f7
+```
+**On ajoute la machine 3 (clone de la machine principale comme les autres) et on change son adresse IP :**
+```
+sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+```
+**Puis on change l'addresse :**
 ```
 NAME=enp0s3
 DEVICE=enp0s3
@@ -95,3 +107,40 @@ ONBOOT=yes
 IPADDR=10.1.1.3
 NETMASK=255.255.255.0
 ```
+**On recharge la config**
+```
+sudo nmcli con reload
+```
+**Et on regarde si on a la bonne adresse avec :**```ip a``` **.**
+### Effectuer des ping d'une machine à l'autre
+**Entre Node1 et Node2 :**
+```
+$ ping 10.1.1.2
+PING 10.1.1.2 (10.1.1.2) 56(84) bytes of data.
+64 bytes from 10.1.1.2: icmp_seq=1 ttl=64 time=1.92 ms
+^C
+--- 10.1.1.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.916/1.916/1.916/0.000 ms
+```
+**Entre Node2 et Node3 :**
+```
+$ ping 10.1.1.3
+PING 10.1.1.3 (10.1.1.3) 56(84) bytes of data.
+64 bytes from 10.1.1.3: icmp_seq=1 ttl=64 time=2.02 ms
+^C
+--- 10.1.1.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 2.018/2.018/2.018/0.000 ms
+```
+**Entre Node1 et Node3**
+```
+$ ping 10.1.1.1
+PING 10.1.1.1 (10.1.1.1) 56(84) bytes of data.
+64 bytes from 10.1.1.1: icmp_seq=1 ttl=64 time=1.07 ms
+^C
+--- 10.1.1.1 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 1.072/1.072/1.072/0.000 ms
+```
+## III. Serveur DHCP
