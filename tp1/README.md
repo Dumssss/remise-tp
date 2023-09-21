@@ -1,4 +1,5 @@
 # **Rendu TP1**
+## I. Most simplest LAN
 ### Déterminer l'adresse MAC de vos deux machines 
 ```
 ip a
@@ -8,7 +9,11 @@ ip a
 link/either 08:00:27:da:e1:07
 ```
 ### ️ Définir une IP statique sur les deux machines
-**Pour la première machine :**
+**On va créer et/ou modifier le fichier de configuration réseau situé dans /etc/sysconfig/network-script/ifcfg-enp0s3**
+```
+sudo nano /etc/sysconfig/network-script/ifcfg-enp0s3
+```
+**Puis on le complète comme suit pour la première machine :**
 ```
 NAME=enp0s3
 DEVICE=enp0s3
@@ -74,4 +79,19 @@ PING 10.1.1.2 (10.1.1.2) 56(84) bytes of data.
 --- 10.1.1.2 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 2.472/2.472/2.472/0.000 ms
+```
+### A l'aide de Wireshark
+Le protocole utilisé pour la capture est le protocole ICMP
+## II. Ajoutons un switch
+**D'abord on ajoute la machine 3 (clone de la machine principale comme les autres) et on change son adresse IP**
+```sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3```
+```
+NAME=enp0s3
+DEVICE=enp0s3
+
+BOOTPROTO=static
+ONBOOT=yes
+
+IPADDR=10.1.1.3
+NETMASK=255.255.255.0
 ```
