@@ -203,6 +203,7 @@ PING google.fr (142.250.75.227) 56(84) bytes of data.
 64 bytes from par10s41-in-f3.1e100.net (142.250.75.227): icmp_seq=1 ttl=113 time=20.2 ms
 ```
 ### ☀️ Wireshark
+![Échange DORA](echangeDORA.pcapng)
 
 # ARP
 ## Tables ARP
@@ -215,6 +216,7 @@ ip neigh show
 192.168.56.1 dev enp0s8 lladdr 0a:00:27:00:00:00 REACHABLE
 ```
 ### ☀️ Echange Wireshark
+![Requete ARP](requeteARP.pcapng)
 
 ## ARP Poisoning
 ### ☀️ Simple ARP Poisoning
