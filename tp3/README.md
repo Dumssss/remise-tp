@@ -151,7 +151,6 @@ $ sudo firewall-cmd --reload
 ```
 ```
 $ sudo firewall-cmd --list-all
-$ sudo firewall-cmd --list-all
 public (active)
   target: default
   icmp-block-inversion: no
@@ -198,6 +197,7 @@ Avec interface graphique, on arrive sur une page blanche avec écrit  :
 Ferrari c'est la meilleure marque de voiture y'a pas de débat
 ```
 Ce qui par ailleurs, est vrai, mais ça c'est un autre sujet.
+
 **🌞 Avec un nom ?**
 ```
 $ sudo cat /etc/hosts 
@@ -215,7 +215,7 @@ C'est pas moi qui le dis...
 $ sudo dnf update -y
 $ sudo dnf install -y bind bind-utils
 ```
-### 2. Install
+### 2. Config
 ```
 $ sudo cat /etc/named.conf
 options {
@@ -225,7 +225,7 @@ options {
         allow-query     { localhost; any; };
         allow-query-cache { localhost; any; };
 
-        recursion yes; # cette ligne autorise la recursion, voir la note en dessous de cette conf
+        recursion yes;
 [...]
 zone "net2.tp3" IN {
      type master;
@@ -268,7 +268,6 @@ $TTL 86400
     86400 ;Minimum TTL
 )
 
-; Infos sur le serveur DNS lui même (NS = NameServer)
 @ IN NS dns.net2.tp3.
 102   IN PTR dns.net2.tp3.
 101   IN PTR web.net2.tp3.
