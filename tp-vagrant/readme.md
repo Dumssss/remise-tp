@@ -94,7 +94,7 @@ PING 10.1.1.102 (10.1.1.102) 56(84) bytes of data.
 
 ^C
 --- 10.1.1.102 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2009ms
+3 packets t me 2009ms
 rtt min/avg/max/mdev = 0.970/1.654/2.026/0.484 ms
 ```
 
@@ -114,70 +114,51 @@ rtt min/avg/max/mdev = 5.528/5.528/5.528/0.000 ms
 
 # V. cloud-init
 
-Vous vous souvenez de lui ? Non ? Bah tant mieux, petite partie pour vous rafraîchir la mémoire justement :D
-
-**`cloud-init` est un outil qui permet à une VM de s'autoconfigurer dès le premier boot.**
-
-Ca permet d'avoir une syntaxe standard pour définir des trucs standards (créer un user, poser une clé SSH, installer un paquet, etc), plutôt que de reposer sur des scripts shell super spécifiques, et prompts à l'erreur.
-
-De plus, énormément d'OS l'ont adopté, c'est devenu un techno de choix chez la plupart des hébergeurs cloud dans les chaînes de provisioning des opérateurs Cloud.
-
-> *Toutes les plateformes cloud comme Azure ou AWS ou d'autres utilisent `cloud-init` pour créer des VMs avec un user et une clé SSH déposés pour vous.*
-
----
-
-Ici, dans le cadre du TP, vous allez :
-
-- ajouter `cloud-init` à la box que vous avez repackagée
-- créer un fichier `.iso` qui contient les données `cloud-init` de notre choix
-  - comme une création d'utilisateurs
-- on pourra ensuite lancer une VM, qui se base sur cette box, et qui s'autoconfigurera toute seule au boot
-
-🌞 **Repackager une box Vagrant**
-
-- cette box doit contenir le paquet `cloud-init` pré-installé
-- il faut aussi avoir saisi `systemctl enable cloud-init` après avoir l'instalaltion du paquet
-  - cela permet à `cloud-init` de démarrer automatiquement au prochain boot de la machine
-
-🌞 **Tester !**
-
-- écrire un `Vagrantfile` qui utilise la box repackagée
-- il faudra ajouter un CD-ROM (un `.iso`) à la VM qui contient nos données `cloud-init`
-  - uiui un `.iso` c'est un CD-ROM virtuel, et ui c'est la méthode plutôt standard avec `cloud-init`
-  - référez-vous aux instructions juste en dessous pour savoir comment construire ce `.iso`
-- allumez la VM avec `vagrant up` et vérifiez que `cloud-init` a bien créé l'utilisateur, avec le bon password, et la bonne clé SSH
-
-➜ **Construire le `.iso` qui contient les données `cloud-init`**
-
-- première étape, créer un fichier texte nommé `user-data` avec le contenu suivant
-
-```yml
----
-local-hostname: cloud-init-test.tp1.efrei
+## 1. Repackaging
+D'abord, j'ai installé cloud-init en utilisant un script : 
+```shell
+#!/bin/bash
+dnf update -y
+dnf install -y cloud-init
+systemctl enable cloud-init
 ```
+```bash
+$ vagrant up
+$ vagrant halt
+$ vagrant destroy -f
+```
+Repackaging de la VM à jour, avec cloud-init installé et activé
 
-- ensuite, créer un fichier texte nommé `user-data` avec le contenu suivant
+```bash
+$ vagrant package --output rocky-efrei.box
+$ vagrant box add rocky-efrei rocky-efrei.box
+```
+Voila le contenue du fichier user-data.yml
 
 ```yml
 ---
 users:
-  - name: nom_de_ton_user
-    primary_group: nom_de_ton_groupe # pareil que le user généralement
-    groups: wheel # sur un système redhat, t'as full accès à sudo si t'es membre du groupe wheel
+  - name: dums
+    primary_group: dums
+    groups: wheel
     shell: /bin/bash
-    sudo: ALL=(ALL) NOPASSWD:ALL # on fait les forceurs sur sudo :D
+    sudo: ALL=(ALL) NOPASSWD:ALL
     lock_passwd: false
-    passwd: <HASH_DU_PASSWORD_MEME_FORMAT_QUE_/etc/shadow>
+    passwd: $6$EbQdmgPn.R5sovC1$zImZCb3F9zaGH95/Jay36oHo1iPnlxIy31Iis8gGdHWv3RHW3K3ueyElogId6IIFaFn5exI5vXadclkyKLbPo.
     ssh_authorized_keys:
-      - ssh-ed25519 AAAAC3NzaC1l3R4CNTE5AAAAIMO/JQ3AtA3k8iXJWlkdUKSHDh215OKyLR0vauzD7BgA # mettez votre propre clé
-```
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDk5mazPHyLDnYEzZdR+vo5AN6iICwd8RYhXlVz0sdUfU3Oqr19ovKPyp1DGJZENwSWPieFqARJd24c+yieQBgLvxwp5VV7MtscygqOTZ9n5vfHa78b04sjFjlzIeZJxTKc9nrP8nGGi6J6WxuqEWPycZE1hg5UBpx0ppbdt3YYNimcxVy47FZiHEOk1kNZkhjH0jfCGuov5JU6ZRtfcbqx77KoIaGzBdn1hiGxY/uxrOB0kTVLtFAppWJOtvbmAQ4EivK5uuDr4KAz7bR8+UwCcRUdo3Y8Eue5M4cRIer3Bk4IcjAHdNDBcpcPLd4VDg2kD+gqO8E7M3k3oE+N6jl cleme@DESKTOP-E1R0286
 
-- enfin, on peut générer le `.iso` à partir de ces deux fichiers avec la commande suivante
+
+```
+Voila la ligne de commande que j'ai insérée dans le VagrantFile :
 
 ```bash
-# rien à changer dans cette commande, à part le nom de l'iso de sortie si vous souhaitez
-# il faut OBLIGATOIREMENT laisser le volid à "cidata" : c'est grâce à ce tag que cloud-init reconnaît ce disque
-genisoimage -output cloud-init.iso -volid cidata -joliet -r meta-data user-data
+config.vm.cloud_init :user_data, content_type: "text/cloud-config", path: "user_data.yml"
 ```
+Voila le  **VagrantFile final** : [VagrantFile5](./Vagrantfile5)
 
-![No magic](./img/cloud-init.png)
+Vérification de l'utilisateur : 
+```bash 
+[vagrant@rocky-cloud-init ~]$ cat /etc/passwd
+dums:x:1001:1001::/home/dums:/bin/bash
+```
