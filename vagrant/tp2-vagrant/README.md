@@ -198,8 +198,14 @@ Pour tester, simple :
 - vous allumez la VM
 - une install de Rocky est censée se lancer
 
+![Install](./accueil.PNG)
+
 🌞 **Analyser l'échange complet avec Wireshark**
 
-- le mieux pour réaliser la capture est sûrement d'utiliser `tcpdump` depuis le serveur PXE
+- le mieux pour réaliser la capture est sûrement d'utiliser `tcpdump` depuis le serveur PXE 
 
-![Install](./Capture.PNG)
+```bash
+$ sudo tcpdump -i eth1 -w capture.pcap
+```
+
+- [Voila le resultat de la capture](./capture.pcap)
