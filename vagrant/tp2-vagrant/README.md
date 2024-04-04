@@ -56,6 +56,13 @@ $ sudo systemctl start dhcpd
 
 - avec `sudo firewall-cmd --add-service=dhcp --permanent` suivi de `sudo fireswall-cmd --reload`
 
+```bash
+$ sudo firewall-cmd --add-service=dhcp --permanent
+success
+$ sudo fireswall-cmd --reload
+success
+```
+
 # II. Installation d'un serveur TFTP
 
 Normalement c'est que pour du legacy, mais on le fait au cas où, suivant vos setups, i don't know.
@@ -64,13 +71,28 @@ C'est vitefé.
 
 🌞 **Installer le paquet `tftp-server`**
 
+```bash
+$ sudo dnf install tftp-server
+```
+
 🌞 **Démarrer le socket TFTP**
 
 - avec un `sudo systemctl enable --now tftp.socket`
+```bash
+$ sudo systemctl enable --now tftp.socket
+Created symlink /etc/systemd/system/sockets.target.wants/tftp.socket → /usr/lib/systemd/system/tftp.socket.
+```
 
 🌞 **Ouvrir le bon port firewall**
 
 - avec `sudo firewall-cmd --add-service=tftp --permanent` suivi de `sudo fireswall-cmd --reload`
+
+```bash
+$ sudo firewall-cmd --add-service=tftp --permanent
+success
+$ sudo fireswall-cmd --reload
+success
+```
 
 > *C'est du port 69 en TCP ou UDP le protocole TFTP.*
 
@@ -84,28 +106,26 @@ Let's go :
 
 ➜ Déjà, récupérez l'iso de Rocky Linux dans la VM.
 
+```bash
+$ scp Rocky-9.3-x86_64-minimal.iso vagrant@10.1.1.11:/home/vagrant/
+```
+
 ➜ Ensuite, suivez le guide :
 
 ```bash
-# on installe les bails nécessaires à l'install d'un nouveao Rocky
-dnf -y install syslinux
+$ dnf -y install syslinux
 
-# on déplace le fichier pxelinux.0 dans le dossier servi par le serveur HTTP/TFTP
-cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
+$ cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
 
-# on prépare l'environnement
-mkdir -p /var/pxe/rocky9
-mkdir /var/lib/tftpboot/rocky9
+$ mkdir -p /var/pxe/rocky9
+$ mkdir /var/lib/tftpboot/rocky9
 
-# adaptez avec le chemin vers l'iso de Rocky sur votre VM
-mount -t iso9660 -o loop,ro /path/vers/liso/de/rocky.iso /var/pxe/rocky9
+$ mount -t iso9660 -o loop,ro /home/vagrant/Rocky-9.3-x86_64-minimal.iso /var/pxe/rocky9
 
-# on récupère dans l'iso de Rocky le nécessaire pour démarrer une install
-cp /var/pxe/rocky9/images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/rocky9/
-cp /usr/share/syslinux/{menu.c32,vesamenu.c32,ldlinux.c32,libcom32.c32,libutil.c32} /var/lib/tftpboot/
+$ cp /var/pxe/rocky9/images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/rocky9/
+$ cp /usr/share/syslinux/{menu.c32,vesamenu.c32,ldlinux.c32,libcom32.c32,libutil.c32} /var/lib/tftpboot/
 
-# on prépare le dossier qaui va contenir les options de boot réseau
-mkdir /var/lib/tftpboot/pxelinux.cfg
+$ mkdir /var/lib/tftpboot/pxelinux.cfg
 ```
 
 ➜ Puis, déposez le contenu suivant dans le fichier `/var/lib/tftpboot/pxelinux.cfg/default` :
@@ -121,7 +141,7 @@ label linux
   menu label ^Install Rocky Linux 9 my big boiiiiiii
   menu default
   kernel rocky9/vmlinuz
-  append initrd=rocky9/initrd.img ip=dhcp inst.repo=http://<IP_DU_SERVEUR_PXE>/rocky9
+  append initrd=rocky9/initrd.img ip=dhcp inst.repo=http://10.1.1.11/rocky9
 label rescue
   menu label ^Rescue installed system
   kernel rocky9/vmlinuz
@@ -134,6 +154,9 @@ label local
 # IV. Installation d'un serveur Apache
 
 🌞 **Installer le paquet `httpd`**
+```bash
+$ dnf install httpd
+```
 
 🌞 **Ajouter un fichier de conf dans `/etc/httpd/conf.d/pxeboot.conf`** avec le contenu suivant :
 
@@ -142,15 +165,25 @@ Alias /rocky9 /var/pxe/rocky9
 <Directory /var/pxe/rocky9>
     Options Indexes FollowSymLinks
     # access permission
-    Require ip 127.0.0.1 10.1.1.0/24 # remplace 10.1.1.0/24 par le réseau dans lequel se trouve le serveur
+    Require ip 127.0.0.1 10.1.1.0/24
 </Directory>
 ```
 
 🌞 **Démarrer le serveur Apache**
+```bash
+$ sudo systemctl start httpd
+```
 
 🌞 **Ouvrir le bon port firewall**
 
 - avec `sudo firewall-cmd --add-port=80/tcp --permanent` suivi de `sudo fireswall-cmd --reload`
+
+```bash
+$ sudo firewall-cmd --add-port=80/tcp --permanent
+success
+$ sudo firewall-cmd --reload
+success
+```
 
 # V. Test
 
