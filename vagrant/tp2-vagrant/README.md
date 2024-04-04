@@ -201,3 +201,5 @@ Pour tester, simple :
 🌞 **Analyser l'échange complet avec Wireshark**
 
 - le mieux pour réaliser la capture est sûrement d'utiliser `tcpdump` depuis le serveur PXE
+
+![Install](./Capture.PNG)
