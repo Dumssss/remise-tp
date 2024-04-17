@@ -77,33 +77,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-
-# II. Setup
-
-## 1. Frontend
-
-Le noeud `frontend.one` va héberger la logique de l'application, et exposer la WebUI ainsi que l'API.
-
-➜ **J'ai fait [un doc dédié pour le setup du frontend](./frontend.md), déroulez-le en entier sur la machine `frontend.one` avant de continuer.**
-
-## 2. Noeuds KVM
-
-Le noeud `kvm1.one` va héberger un hyperviseur KVM. Il sera contrôlé par `frontend.one` (à travers SSH).
-
-➜ **J'ai fait [un doc dédié pour le setup des noeuds KVM](./kvm.md), déroulez-le en entier, uniquement sur la machine `kvm1.one`, avant de continuer.**
-
-> *Même envisageable de repackage (avec Vagrant) un noeud KVM qui a été préparé, pour pouvoir pop des nouveaux noeuds KVM à volonté. On ferait ça dans la vie réelle pour pouvoir facilement ajuster la taille du cluster, avec la possibilité de pop très rapidement des nouveaux noeuds.*
-
-## 3. Réseau
-
-On va créer un réseau VXLAN pour que les VMs pourront utiliser pour communiquer.
-
-➜ **Pouif, là encore, j'ai fait [un doc dédié pour le setup du réseau](./network.md), déroulez-le en entier, avant de continuer.**
-
-- les commandes ne sont à effectuer que `kvm1.one`
-- le setup de `kvm2.one` ne viendra que dans la partie IV du TP
-
-# III. Utiliser la plateforme
+# II. Utiliser la plateforme
 
 Bah ouais il serait temps nan. Pop des ptites VMs.
 
