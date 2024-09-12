@@ -55,64 +55,106 @@ Ainsi, pendant son exécution, le programme aura les droits de cet utilisateur.
 
 🌞 **Créer un utilisateur applicatif**
 
-- c'est lui qui lancera `efrei_server`
-- avec une commande `useradd`
-- choisissez...
-  - un nom approprié
-  - un homedir approprié
-  - un shell approprié
-
-> N'hésitez pas à venir vers moi pour discuter de ce qui est le plus "approprié" si nécessaire.
+```bash
+$ sudo useradd -r -d /usr/local/bin/efrei_server/ -s /usr/sbin/nologin efreiuser
+```
 
 🌞 **Modifier le service pour que ce nouvel utilisateur lance le programme `efrei_server`**
 
-- je vous laisse chercher la clause appropriée à ajouter dans le fichier `.service`
+```bash
+[Unit]
+Description=Super serveur EFREI
+
+[Service]
+ExecStart=/usr/local/bin/efrei_server/app
+EnvironmentFile=/usr/local/bin/efrei_server/env
+Restart=always
+User=efreiuser
+```
 
 🌞 **Vérifier que le programme s'exécute bien sous l'identité de ce nouvel utilisateur**
 
-- avec une commande `ps`
-- encore là, filtrez la sortie avec un `| grep`
-- n'oubliez pas de redémarrer le service pour que ça prenne effet hein !
+```bash
+$ ps aux | grep efrei_server
+efreius+    2734  7.6  0.1   2956  2136 ?        Ss   03:02   0:00 /usr/local/bin/efrei_server/app
+efreius+    2735  1.7  1.4  31244 25856 ?        S    03:02   0:00 /usr/local/bin/efrei_server/app
+```
 
 > *Déjà à ce stade, le programme a des droits vraiment limités sur le système.*
 
 ## 3. Maîtrisez l'emplacement des fichiers
 
-Pour fonctionner, l'application a besoin de deux choses :
-
-- des **variables d'environnement définies**, ou des valeurs par défaut nulles seront utilisées
-- un **fichier de log** où elle peut écrire
-  - par défaut elle écrit dans `/tmp` comme l'indique le warning au lancement de l'application
-  - vous pouvez définir la variable `LOG_DIR` pour choisir l'emplacement du fichier de logs
-
 🌞 **Choisir l'emplacement du fichier de logs**
 
-- créez un dossier dédié dans `/var/log/` (le dossier standard pour stocker les logs)
+- créez un dossier dédié dans `/var/log/` (le dossier standard pour stocker les logs) 
+```bash
+sudo mkdir /var/log/efrei_serverlog 
+```
 - indiquez votre nouveau dossier de log à l'application avec la variable `LOG_DIR`
+```bash
+LOG_DIR=/var/log/efrei_serverlog 
+```
 - l'application créera un fichier `server.log` à l'intérieur
 
 🌞 **Maîtriser les permissions du fichier de logs**
 
-- avec les commandes `chown` et `chmod`
-- appliquez les permissions les plus restrictives possibles sur le dossier dans `var/log/`
+Droit sur le fichier ``server.log``
+```bash
+[dums@rocky efrei_serverlog]$ sudo chmod 600 server.log
+[dums@rocky efrei_serverlog]$ ls -al
+-rw-------. 1 efreiuser efreiuser   58 Sep 12 03:19 server.log
+```
 
-![chown chmod](./img/chown-chmod-2.webp)
+Propriété unique de l'utilisateur `efreiuser` :
+```bash
+[dums@rocky log]$ sudo chmod 700 efrei_serverlog/
+[dums@rocky log]$ ls -al
+drwx------.  2 efreiuser efreiuser     24 Sep 12 03:19 efrei_serverlog
+```
 
 ## 4. Security hardening
 
-Il existe beaucoup de clauses qu'on peut ajouter dans un fichier `.service` pour que *systemd* s'occupe de sécuriser le service, en l'isolant du reste du système par exemple.
+ **Config finale :**
 
-Ainsi, une commande est fournie `systemd-analyze security` qui permet de voir quelles mesures de sécurité on a activé. Un score (un peu arbitraire) est attribué au *service* ; cela représente son "niveau de sécurité".
+```bash
+[Unit]
+Description=Super serveur EFREI
 
-Cette commande est **très** pratique d'un point de vue pédagogique : elle va vous montrer toutes les clauses qu'on peut ajouter dans un `.service` pour renforcer sa sécurité.
+[Service]
+ExecStart=/usr/local/bin/efrei_server/app
+EnvironmentFile=/usr/local/bin/efrei_server/env
+Restart=always
+User=efreiuser
+RemoveIPC=yes
+NoNewPrivileges=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectHome=yes
+SystemCallFilter=~@raw.io
+SystemCallFilter=~@resources
+SystemCallFilter=~@obsolete
+SystemCallFilter=~@mount
+SystemCallFilter=~@debug
+SystemCallFilter=~@cpu-emulation
+SystemCallFilter=~@privileged
+UMask=0077
+ProtectClock=yes
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_NET_ADMIN
+ProtectKernelModules=yes
+SystemCallArchitectures=native
+MemoryDenyWriteExecute=yes
+RestrictNamespaces=yes
+ProtectHostname=yes
+ProtectKernelTunables=yes
+RestrictRealtime=yes
+LockPersonality=yes
+ProtectProc=readonly
+ProcSubset=pid
+```
 
-🌞 **Modifier le `.service` pour augmenter son niveau de sécurité**
-
-- ajoutez au moins 5 clauses dans le fichier pour augmenter le niveau de sécurité de l'application
-- n'utilisez que des clauses que vous comprenez, useless sinon
-
-🌟 **BONUS : Essayez d'avoir le score le plus haut avec `systemd-analyze security`**
-
-➜ 💡💡💡 **A ce stade, vous pouvez ré-essayez l'injection que vous avez trouvé dans la partie 1. Normalement, on peut faire déjà moins de trucs avec.**
-
+**Score de sécurité**
+```bash
+[dums@rocky ~]$ systemd-analyze security | grep efrei_server
+efrei_server.service      2.9 OK        🙂
+```
 > ➜ [**Lien vers la partie 4**](../part4/readme.md)
