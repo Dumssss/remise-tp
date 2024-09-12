@@ -72,4 +72,4 @@ sh-5.1$
 hping3 --flood -S 192.168.56.101 -p 8888
 ```
 
-> ➜ [**Lien vers la partie 2**](/part2/readme.md)
+> ➜ [**Lien vers la partie 2**](../part2/readme.md)

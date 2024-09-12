@@ -115,4 +115,4 @@ Cette commande est **très** pratique d'un point de vue pédagogique : elle va v
 
 ➜ 💡💡💡 **A ce stade, vous pouvez ré-essayez l'injection que vous avez trouvé dans la partie 1. Normalement, on peut faire déjà moins de trucs avec.**
 
-> ➜ [**Lien vers la partie 4**](/part4/readme.md)
+> ➜ [**Lien vers la partie 4**](../part4/readme.md)
