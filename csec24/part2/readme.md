@@ -73,4 +73,4 @@ $ systemctl status efrei_server
 
 Sep 11 23:45:31 rocky systemd[1]: Started Super serveur EFREI.
 ```
-> ➜ [**Lien vers la partie 3**](./part3.md)
+> ➜ [**Lien vers la partie 3**](/part3/readme.md)
