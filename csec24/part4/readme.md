@@ -17,70 +17,63 @@ Mais cette fois-ci en s'intéressant un peu plus à ce qu'on peut faire à l'ext
 
 🌞 **Configurer de façon robuste le firewall**
 
-- Bloquer toutes les connexions sortantes :
 ```bash
-$ sudo firewall-cmd --permanent --zone=public --set-target=DROP
-success
+$ sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+$ sudo iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+$ sudo iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+$ sudo iptables -I OUTPUT -p tcp --sport 8888 -j ACCEPT
+$ sudo iptables -A INPUT -i lo -j ACCEPT
+$ sudo iptables -A OUTPUT -o lo -j ACCEPT
+$ sudo iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+$ sudo iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+$ sudo iptables -P INPUT DROP
+$ sudo iptables -P OUTPUT DROP
 ```
-- Pour faire les maj temporairement :
+**Résultat de la configuraton**
+```bash
+$ sudo iptables -L
+Chain INPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ddi-tcp-1
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
+ACCEPT     all  --  anywhere             anywhere
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
 
-```bash
-sudo firewall-cmd --permanent --add-port=80/tcp
-sudo firewall-cmd --permanent --add-port=443/tcp
-```
-- Et bien sur : 
-```bash
-$ sudo firewall-cmd --reload
-success
-```
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
 
-- Pour bloquer toutes les connexions entrantes (y compris le ping) à part si c'est à destination du serveur SSH ou du service `efrei_admin` : 
-```bash
-$ sudo firewall-cmd --permanent --zone=public --set-target=DROP
-$ sudo firewall-cmd --get-active-zones
-drop
-  interfaces: enp0s8 enp0s3
-```
-```bash
-$ sudo firewall-cmd --permanent --zone=public --add-service=ssh
-success
-$ sudo firewall-cmd --permanent --zone=public --add-port=8888/tcp
-success
-```
-```bash
-$ sudo firewall-cmd --permanent --zone=public --add-icmp-block=echo-request
-success
+Chain OUTPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     tcp  --  anywhere             anywhere             tcp spt:ddi-tcp-1
+ACCEPT     tcp  --  anywhere             anywhere             tcp spt:ssh state ESTABLISHED
+ACCEPT     all  --  anywhere             anywhere
+ACCEPT     tcp  --  anywhere             anywhere             tcp spt:ssh state ESTABLISHED
 ```
 
 🌞 **Prouver que la configuration est effective**
 
 - prouver que les connexions sortantes sont bloquées
+```bash
+$ curl example.com
+curl: (6) Could not resolve host: example.com
+```
 - prouver que les pings sont bloqués, mais une connexion SSH fonctionne
+```bash
+$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+--- 8.8.8.8 ping statistics ---
+72 packets transmitted, 0 received, 100% packet loss, time 71364ms
+```
 
 ![Firewall](./img/fw.jpg)
 
 ## 2. Protéger l'app contre le flood
 
-Fail2ban notre vieil ami ! Fail2ban est un outil classique sur les OS GNU/Linux.
-
-**Le fonctionnement de fail2ban est simpliste :**
-
-- on lui demande de surveiller un fichier donné
-- on définit un pattern à repérer dans ce fichier
-- si plusieurs lignes correspondant au pattern se répètent, il effectue une action
-- par exemple, on ajoute une règle firewall
-
-> Quand on configure fail2ban pour surveiller un certain fichier, on dit qu'on crée une *jail* fail2ban.
-
-**Cas concret ici :**
-
-- dès qu'un client se connecte à notre service, une ligne de log est ajouté au fichier de log
-- cette ligne de log contient l'IP du client qui s'est connecté
-- si un client se connecte + de 5 fois en moins de 10 secondes (par exemple) on peut estimer que c'est du flood (tentative de DOS ?)
-- il faudrait blacklister automatiquement l'IP de ce client dans le firewall
-- fail2ban fait exactement ça
-
 🌞 **Installer fail2ban sur la machine**
+```bash
+sudo dnf install epel-release
+sudo dnf install fail2ban
+```
 
 🌞 **Ajouter une *jail* fail2ban**
 
