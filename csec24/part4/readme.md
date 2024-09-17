@@ -78,16 +78,17 @@ sudo dnf install fail2ban
 ```bash
 [DEFAULT]
 enabled  = true
-port     = ssh
+port     = all
 logpath  = /var/log/efrei_serverlog/server.log
 maxretry = 3
 findtime = 600
 bantime  = 600
 
-[sshd]
+[efrei-server]
 enabled  = true
-filter   = sshd
-action   = iptables[name=SSH, port=ssh, protocol=tcp]
+filter   = efrei-server
+action   = iptables[name=efrei-server, port=all, protocol=all]
+logpath  = /usr/local/bin/efrei_server/app.log
 ```
 
 🌞 **Vérifier que ça fonctionne !**
