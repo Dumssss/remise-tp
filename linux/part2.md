@@ -116,4 +116,11 @@ sudo firewall-cmd --permanent --zone=public --add-rich-rule='
   port protocol="tcp" port="22" accept'
 ```
 
+```PS
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='
+  rule family="ipv4"
+  source address="10.1.1.0/32"
+  port protocol="udp" port="323" accept'
+```
+
 Suite --> [Partie 3](./part3.md)
