@@ -109,5 +109,11 @@ success
 
 🌞 **Pour toutes les applications qui sont en écoute sur TOUTES les adresses IP**
 
-- dans Linux, ce sont les applications qui écoutent sur la pseudo-adresse IP `0.0.0.0` : ça signifie que toutes les adresses IP de la machine sont concernées
-- modifier la configuration de l'application pour n'écouter que une seule IP : celle qui est nécessaire
+```PS
+sudo firewall-cmd --permanent --zone=public --add-rich-rule='
+  rule family="ipv4"
+  source address="10.1.1.0/32"
+  port protocol="tcp" port="22" accept'
+```
+
+Suite --> [Partie 3](./part3.md)

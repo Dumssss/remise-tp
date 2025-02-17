@@ -65,4 +65,4 @@ Feb 17 12:28:19 localhost systemd[1]: Starting firewalld - dynamic firewall daem
 Feb 17 12:28:21 localhost systemd[1]: Started firewalld - dynamic firewall daemon.
 ```
 
-Suite --> [Partie 2](/part2.md)
+Suite --> [Partie 2](./part2.md)
