@@ -243,6 +243,7 @@ User dums may run the following commands on node1:
 
 - l'utilisateur `meow` est en réalité complètement `root` sur la machine hein là. Prouvez-le.
 ```ps
+[dums@node1 ~]$ sudo su -s /bin/bash - meow
 [meow@node1 dums]$ sudo -u dums less /etc/profile
 [sudo] password for meow:
 !/bin/bash
@@ -255,6 +256,13 @@ root
   - vous pouvez ajouter de la configuration
   - ou supprimer de la configuration
   - du moment qu'on garde des fonctionnalités à peu près équivalentes !
+
+```ps
+[dums@node1 ~]$ sudo nano /etc/pam.d/su
+# Uncomment the following line to require a user to be in the "wheel" group.
+auth            required        pam_wheel.so use_uid
+[dums@node1 ~]$ sudo usermod -aG wheel dums
+```
 
 ## 2. Files and permissions
 
