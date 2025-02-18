@@ -184,12 +184,12 @@ dums:x:1000:1000:Clement:/home/dums:/bin/bash
 - ajouter une configuration `sudoers` pour que l'utilisateur `meow` puisse exécuter seulement et uniquement les commandes `ls`, `cat`, `less` et `more` en tant que votre utilisateur
 ```ps
 [dums@node1 ~]$ sudo visudo
-meow    ALL=(dums) /bin/ls, /bin/cat, /bin/less, /bin/more
+meow    ALL=(dums) /usr/bin/ls, /usr/bin/cat, /usr/bin/less, /usr/bin/more
 ```
 - ajouter une configuration `sudoers` pour que les membres du groupe `admins` puisse exécuter seulement et uniquement la commande `apt` en tant que `root`
 ```ps
 [dums@node1 ~]$ sudo visudo
-%admins ALL=(root) /bin/apt
+%admins ALL=(root) /bin/dnf
 ```
 - ajouter une configuration `sudoers` pour que votre utilisateur puisse exécuter n'importe quelle commande en tant `root`, sans avoir besoin de saisir un mot de passe
 ```ps
@@ -199,8 +199,42 @@ dums ALL=(root) NOPASSWD: ALL
 
 - prouvez que ces 3 configurations ont pris effet (vous devez vous authentifier avec le bon utilisateur, et faire une commande `sudo` qui doit fonctioner correctement)
 ```ps
-[dums@node1 ~]$ sudo ls
+[dums@node1 ~]$ sudo su -s /bin/bash - meow
+Last login: Tue Feb 18 15:34:32 CET 2025 on pts/0
+su: warning: cannot change directory to /home/meow: No such file or directory
+[meow@node1 dums]$ sudo -l
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for meow:
+Matching Defaults entries for meow on node1:
+    !visiblepw, always_set_home, match_group_by_gid, always_query_group_plugin, env_reset, env_keep="COLORS DISPLAY HOSTNAME HISTSIZE
+    KDEDIR LS_COLORS", env_keep+="MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE", env_keep+="LC_COLLATE LC_IDENTIFICATION
+    LC_MEASUREMENT LC_MESSAGES", env_keep+="LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE", env_keep+="LC_TIME LC_ALL LANGUAGE
+    LINGUAS _XKB_CHARSET XAUTHORITY", secure_path=/sbin\:/bin\:/usr/sbin\:/usr/bin
+
+User meow may run the following commands on node1:
+    (root) /bin/apt
+    (dums) /bin/ls, /bin/cat, /bin/less, /bin/more
+[meow@node1 dums]$ sudo -u dums /bin/ls
 bigfile
+```
+```ps
+[dums@node1 ~]$ sudo -l
+Matching Defaults entries for dums on node1:
+    !visiblepw, always_set_home, match_group_by_gid, always_query_group_plugin, env_reset, env_keep="COLORS DISPLAY HOSTNAME HISTSIZE
+    KDEDIR LS_COLORS", env_keep+="MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE", env_keep+="LC_COLLATE LC_IDENTIFICATION
+    LC_MEASUREMENT LC_MESSAGES", env_keep+="LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE", env_keep+="LC_TIME LC_ALL LANGUAGE
+    LINGUAS _XKB_CHARSET XAUTHORITY", secure_path=/sbin\:/bin\:/usr/sbin\:/usr/bin
+
+User dums may run the following commands on node1:
+    (ALL) ALL
+    (root) NOPASSWD: ALL
 ```
 
 ### C. Hackers gonna hack
@@ -208,6 +242,15 @@ bigfile
 🌞 **Déjà une configuration faible ?**
 
 - l'utilisateur `meow` est en réalité complètement `root` sur la machine hein là. Prouvez-le.
+```ps
+[meow@node1 dums]$ sudo -u dums less /etc/profile
+[sudo] password for meow:
+!/bin/bash
+[dums@node1 ~]$ su root
+Password:
+[root@node1 dums]# whoami
+root
+```
 - proposez une configuration similaire, sans présenter cette faiblesse de configuration
   - vous pouvez ajouter de la configuration
   - ou supprimer de la configuration
