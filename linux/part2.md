@@ -97,13 +97,13 @@ no
 🌞 **Fermez tous les ports inutilement ouverts dans le firewall**
 
 ```PS
-[dums@vbox ~]$ sudo firewall-cmd --remove-service samba-client
+[dums@vbox ~]$ sudo firewall-cmd --remove-service samba-client --permanent
 success
-[dums@vbox ~]$ sudo firewall-cmd --remove-service mdns
+[dums@vbox ~]$ sudo firewall-cmd --remove-service mdns --permanent
 success
-[dums@vbox ~]$ sudo firewall-cmd --remove-service dhcpv6-client
+[dums@vbox ~]$ sudo firewall-cmd --remove-service dhcpv6-client --permanent
 success
-[dums@vbox ~]$ sudo firewall-cmd --remove-service cockpit
+[dums@vbox ~]$ sudo firewall-cmd --remove-service cockpit --permanent
 success
 ```
 
