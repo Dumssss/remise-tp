@@ -255,4 +255,8 @@ Writing superblocks and filesystem accounting information: done
 - il faut la monter sur `/var/www`
 ```ps
 sudo mount -o nodev,noexec,nosuid -t ext4 /dev/mapper/rl_vbox-web /var/www
+
+[dums@node1 ~]$ df -h /dev/mapper/rl_vbox-web
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/rl_vbox-web   20G   24K   19G   1% /var/www
 ```
