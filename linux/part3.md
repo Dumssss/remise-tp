@@ -191,12 +191,39 @@ dd if=/dev/zero of=/home/dums/bigfile bs=4M count=2500
 
 🌞 **Utiliser ce nouveau disque pour étendre la partition `/home` de 20G**
 
-- dans l'ordre il faut :
 - indiquer à LVM qu'il y a un nouveau PV dispo
+```ps
+[dums@node1 ~]$ sudo pvcreate /dev/sdb
+  Physical volume "/dev/sdb" successfully created.
+```
 - ajouter ce nouveau PV au VG existant
+```ps
+[dums@node1 ~]$ sudo vgextend rl_vbox /dev/sdb
+  Volume group "rl_vbox" successfully extended
+[dums@node1 ~]$ sudo vgs
+  VG      #PV #LV #SN Attr   VSize   VFree
+  rl_vbox   3   4   0 wz--n- <69.49g 41.48g
+```
 - étendre le LV existant pour récupérer le nouvel espace dispo au sein du VG
+```PS
+[dums@node1 ~]$ sudo lvextend -L+20G /dev/mapper/rl_vbox-home
+  Size of logical volume rl_vbox/home changed from 13.00 GiB (3329 extents) to 33.00 GiB (8449 extents).
+  Logical volume rl_vbox/home successfully resized.
+```
 - indiquer au système de fichier ext4 que la partition a été agrandie
+```PS
+[dums@node1 ~]$ sudo resize2fs /dev/mapper/rl_vbox-home
+resize2fs 1.46.5 (30-Dec-2021)
+Filesystem at /dev/mapper/rl_vbox-home is mounted on /home; on-line resizing required
+old_desc_blocks = 2, new_desc_blocks = 5
+The filesystem on /dev/mapper/rl_vbox-home is now 8651776 (4k) blocks long.
+```
 - prouvez avec un `df -h` que vous avez récupéré de l'espace en plus
+```ps
+[dums@node1 ~]$ sudo df -h /dev/mapper/rl_vbox-home
+Filesystem                Size  Used Avail Use% Mounted on
+/dev/mapper/rl_vbox-home   33G  9.8G   22G  32% /home
+``` 
 
 ## 3. Prepare another partition
 
@@ -208,10 +235,24 @@ Pour la suite du TP, on va préparer une dernière partition. Il devrait vous re
 
 - le LV doit s'appeler `web`
 - elle doit faire 20G et être formatée en ext4
+```PS
+[dums@node1 ~]$ sudo lvcreate -L20000 -n web rl_vbox
+  Logical volume "web" created.
+
+[dums@node1 ~]$ sudo mkfs -t ext4 /dev/mapper/rl_vbox-web
+mke2fs 1.46.5 (30-Dec-2021)
+Creating filesystem with 5120000 4k blocks and 1281120 inodes
+Filesystem UUID: 6bc8ec2f-f816-4435-b611-4f817a6152cc
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+```
 - il faut la monter sur `/var/www`
-
-🌞 **Proposez au moins une option de montage**
-
-- au moment où on monte la partition (avec fstab ou la commande `mount`), on peut choisir des options de montage
-- proposez au moins une option de montage qui augmente le niveau de sécurité lors de l'utilisation de la partition
-- je rappelle que la partition ne contiendra que des fichiers HTML
+```ps
+sudo mount -o nodev,noexec,nosuid -t ext4 /dev/mapper/rl_vbox-web /var/www
+```

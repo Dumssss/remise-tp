@@ -110,10 +110,19 @@ success
 🌞 **Pour toutes les applications qui sont en écoute sur TOUTES les adresses IP**
 
 ```PS
-sudo firewall-cmd --permanent --zone=public --add-rich-rule='
-  rule family="ipv4"
-  source address="10.1.1.0/32"
-  port protocol="tcp" port="22" accept'
+[dums@node1 ~]$ sudo nano /etc/ssh/sshd_config
+#Port 22
+#AddressFamily any
+ListenAddress 10.1.1.11
+#ListenAddress ::
+[dums@node1 ~]$ sudo systemctl restart sshd
+[dums@node1 ~]$ sudo grep -w -i listenaddress /etc/ssh/sshd_config
+ListenAddress 10.1.1.11
+#ListenAddress :: 
+[dums@node1 ~]$ sudo systemctl status sshd
+Feb 17 18:05:19 node1.tp1.b3 systemd[1]: Starting OpenSSH server daemon...
+Feb 17 18:05:19 node1.tp1.b3 sshd[1442]: Server listening on 10.1.1.11 port 22.
+Feb 17 18:05:19 node1.tp1.b3 systemd[1]: Started OpenSSH server daemon.
 ```
 
 ```PS
