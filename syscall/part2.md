@@ -147,6 +147,10 @@ sudo sysdig "user.uid=$(id -u)"
 - l'extension c'est `.scap` par convention
 - **capturez les *syscalls*  effectués par un `curl example.org`**
 
+```ps
+[dums@vbox ~]$ sudo sysdig -w curl.scap proc.name=curl
+```
+
 Suite --> [Fichier curl.scap](./curl.scap)
 
 ## 3. Bonus : Stratoshark
