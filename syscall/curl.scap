@@ -1,0 +1,1271 @@
+1051 15:39:15.589088593 0 curl (3475) < execve res=0 exe=curl args=example.org. tid=3475(curl) pid=3475(curl) ptid=3338(bash) cwd=<NA> fdlimit=1024 pgft_maj=0 pgft_min=30 vm_size=628 vm_rss=0 vm_swap=0 comm=curl cgroups=cpuset=/.cpu=/.cpuacct=/.io=/.memory=/user.slice/user-1000.slice/session-4.sc... env=SHELL=/bin/bash.HISTCONTROL=ignoredups.HISTSIZE=1000.HOSTNAME=vbox.PWD=/home/... tty=34817 pgid=3475(curl) loginuid=1000(dums) flags=0 cap_inheritable=0 cap_permitted=0 cap_effective=0 exe_ino=411852 exe_ino_ctime=2025-02-17 12:02:30.423848860 exe_ino_mtime=2024-11-07 02:54:04.000000000 uid=1000(dums) trusted_exepath=/usr/bin/curl
+1052 15:39:15.589143571 0 curl (3475) > brk addr=0
+1053 15:39:15.589145222 0 curl (3475) < brk res=558AE05D7000 vm_size=628 vm_rss=128 vm_swap=0
+1054 15:39:15.589624430 0 curl (3475) > switch next=17 pgft_maj=0 pgft_min=36 vm_size=628 vm_rss=128 vm_swap=0
+1077 15:39:15.597121588 0 curl (3475) > arch_prctl 
+1078 15:39:15.597124954 0 curl (3475) < arch_prctl 
+1079 15:39:15.597186333 0 curl (3475) > access mode=4(R_OK)
+1080 15:39:15.597212344 0 curl (3475) < access res=-2(ENOENT) name=/etc/ld.so.preload
+1081 15:39:15.597228219 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/etc/ld.so.cache flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1082 15:39:15.597245484 0 curl (3475) < openat fd=3(<f>/etc/ld.so.cache) dirfd=-100(AT_FDCWD) name=/etc/ld.so.cache flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=132200
+1083 15:39:15.597247799 0 curl (3475) > fstat fd=3(<f>/etc/ld.so.cache)
+1084 15:39:15.597251986 0 curl (3475) < fstat res=0
+1085 15:39:15.597252769 0 curl (3475) > mmap addr=0 length=14991 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/etc/ld.so.cache) offset=0
+1086 15:39:15.597274313 0 curl (3475) < mmap res=140630831480832 vm_size=644 vm_rss=256 vm_swap=0
+1087 15:39:15.597275367 0 curl (3475) > close fd=3(<f>/etc/ld.so.cache)
+1088 15:39:15.597276751 0 curl (3475) < close res=0
+1089 15:39:15.597287820 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libcurl.so.4 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1090 15:39:15.597304147 0 curl (3475) < openat fd=3(<f>/lib64/libcurl.so.4) dirfd=-100(AT_FDCWD) name=/lib64/libcurl.so.4 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=411489
+1091 15:39:15.597305631 0 curl (3475) > read fd=3(<f>/lib64/libcurl.so.4) size=832
+1092 15:39:15.597310948 0 curl (3475) < read res=832 data=.ELF..............>.....p/......@.......p$..........@.8...@.....................
+1093 15:39:15.597313374 0 curl (3475) > fstat fd=3(<f>/lib64/libcurl.so.4)
+1094 15:39:15.597314691 0 curl (3475) < fstat res=0
+1095 15:39:15.597315501 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1096 15:39:15.597325537 0 curl (3475) < mmap res=140630831472640 vm_size=652 vm_rss=256 vm_swap=0
+1097 15:39:15.597336692 0 curl (3475) > mmap addr=0 length=659952 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libcurl.so.4) offset=0
+1098 15:39:15.597344981 0 curl (3475) < mmap res=140630830809088 vm_size=1300 vm_rss=256 vm_swap=0
+1099 15:39:15.597345856 0 curl (3475) > mmap addr=7FE72AB7F000 length=466944 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcurl.so.4) offset=61440
+1100 15:39:15.597366171 0 curl (3475) < mmap res=140630830870528 vm_size=1300 vm_rss=256 vm_swap=0
+1101 15:39:15.597367052 0 curl (3475) > mmap addr=7FE72ABF1000 length=106496 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcurl.so.4) offset=528384
+1102 15:39:15.597375764 0 curl (3475) < mmap res=140630831337472 vm_size=1300 vm_rss=256 vm_swap=0
+1103 15:39:15.597376480 0 curl (3475) > mmap addr=7FE72AC0B000 length=24576 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcurl.so.4) offset=630784
+1104 15:39:15.597384173 0 curl (3475) < mmap res=140630831443968 vm_size=1300 vm_rss=256 vm_swap=0
+1105 15:39:15.597396178 0 curl (3475) > mmap addr=7FE72AC11000 length=496 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1106 15:39:15.597404274 0 curl (3475) < mmap res=140630831468544 vm_size=1300 vm_rss=256 vm_swap=0
+1107 15:39:15.597430071 0 curl (3475) > close fd=3(<f>/lib64/libcurl.so.4)
+1108 15:39:15.597431523 0 curl (3475) < close res=0
+1109 15:39:15.597435880 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libz.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1110 15:39:15.597447719 0 curl (3475) < openat fd=3(<f>/lib64/libz.so.1) dirfd=-100(AT_FDCWD) name=/lib64/libz.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401519
+1111 15:39:15.597449050 0 curl (3475) > read fd=3(<f>/lib64/libz.so.1) size=832
+1112 15:39:15.597451454 0 curl (3475) < read res=832 data=.ELF..............>......5......@...................@.8...@.....................
+1113 15:39:15.597452642 0 curl (3475) > fstat fd=3(<f>/lib64/libz.so.1)
+1114 15:39:15.597454103 0 curl (3475) < fstat res=0
+1115 15:39:15.597455432 0 curl (3475) > mmap addr=0 length=102408 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libz.so.1) offset=0
+1116 15:39:15.597463168 0 curl (3475) < mmap res=140630830702592 vm_size=1404 vm_rss=256 vm_swap=0
+1117 15:39:15.597463875 0 curl (3475) > mprotect addr=7FE72AB59000 length=86016 prot=0(PROT_NONE)
+1118 15:39:15.597480344 0 curl (3475) < mprotect res=0
+1119 15:39:15.597481337 0 curl (3475) > mmap addr=7FE72AB59000 length=57344 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libz.so.1) offset=12288
+1120 15:39:15.597491625 0 curl (3475) < mmap res=140630830714880 vm_size=1404 vm_rss=256 vm_swap=0
+1121 15:39:15.597492428 0 curl (3475) > mmap addr=7FE72AB67000 length=24576 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libz.so.1) offset=69632
+1122 15:39:15.597500379 0 curl (3475) < mmap res=140630830772224 vm_size=1404 vm_rss=256 vm_swap=0
+1123 15:39:15.597501075 0 curl (3475) > mmap addr=7FE72AB6E000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libz.so.1) offset=94208
+1124 15:39:15.597507517 0 curl (3475) < mmap res=140630830800896 vm_size=1404 vm_rss=256 vm_swap=0
+1125 15:39:15.597517996 0 curl (3475) > mmap addr=7FE72AB6F000 length=8 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1126 15:39:15.597525838 0 curl (3475) < mmap res=140630830804992 vm_size=1404 vm_rss=256 vm_swap=0
+1127 15:39:15.597531909 0 curl (3475) > close fd=3(<f>/lib64/libz.so.1)
+1128 15:39:15.597533026 0 curl (3475) < close res=0
+1129 15:39:15.597536187 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libc.so.6 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1130 15:39:15.597545084 0 curl (3475) < openat fd=3(<f>/lib64/libc.so.6) dirfd=-100(AT_FDCWD) name=/lib64/libc.so.6 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401272
+1131 15:39:15.597546525 0 curl (3475) > read fd=3(<f>/lib64/libc.so.6) size=832
+1132 15:39:15.597548958 0 curl (3475) < read res=832 data=.ELF..............>.............@.........&.........@.8...@.F.E.........@.......
+1133 15:39:15.597549858 0 curl (3475) > pread fd=3(<f>/lib64/libc.so.6) size=784 pos=64
+1134 15:39:15.597551292 0 curl (3475) < pread res=784 data=........@.......@.......@.......................................`7......`7......
+1135 15:39:15.597552286 0 curl (3475) > pread fd=3(<f>/lib64/libc.so.6) size=48 pos=848
+1136 15:39:15.597552910 0 curl (3475) < pread res=48 data=.... .......GNU.................................
+1137 15:39:15.597553622 0 curl (3475) > pread fd=3(<f>/lib64/libc.so.6) size=68 pos=896
+1138 15:39:15.597554163 0 curl (3475) < pread res=68 data=............GNU...D.... 4....1[+X.c.............GNU.................
+1139 15:39:15.597555122 0 curl (3475) > fstat fd=3(<f>/lib64/libc.so.6)
+1140 15:39:15.597556496 0 curl (3475) < fstat res=0
+1141 15:39:15.597557489 0 curl (3475) > pread fd=3(<f>/lib64/libc.so.6) size=784 pos=64
+1142 15:39:15.597558168 0 curl (3475) < pread res=784 data=........@.......@.......@.......................................`7......`7......
+1143 15:39:15.597559302 0 curl (3475) > mmap addr=0 length=2129840 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libc.so.6) offset=0
+1144 15:39:15.597567305 0 curl (3475) < mmap res=140630827204608 vm_size=3484 vm_rss=256 vm_swap=0
+1145 15:39:15.597568065 0 curl (3475) > mmap addr=7FE72A828000 length=1527808 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libc.so.6) offset=163840
+1146 15:39:15.597583344 0 curl (3475) < mmap res=140630827368448 vm_size=3484 vm_rss=256 vm_swap=0
+1147 15:39:15.597584094 0 curl (3475) > mmap addr=7FE72A99D000 length=360448 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libc.so.6) offset=1691648
+1148 15:39:15.597593747 0 curl (3475) < mmap res=140630828896256 vm_size=3484 vm_rss=256 vm_swap=0
+1149 15:39:15.597594441 0 curl (3475) > mmap addr=7FE72A9F5000 length=24576 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libc.so.6) offset=2052096
+1150 15:39:15.597602682 0 curl (3475) < mmap res=140630829256704 vm_size=3484 vm_rss=256 vm_swap=0
+1151 15:39:15.597614350 0 curl (3475) > mmap addr=7FE72A9FB000 length=53168 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1152 15:39:15.597630923 0 curl (3475) < mmap res=140630829281280 vm_size=3484 vm_rss=256 vm_swap=0
+1153 15:39:15.597650849 0 curl (3475) > close fd=3(<f>/lib64/libc.so.6)
+1154 15:39:15.597652120 0 curl (3475) < close res=0
+1155 15:39:15.597662083 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libnghttp2.so.14 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1156 15:39:15.597672292 0 curl (3475) < openat fd=3(<f>/lib64/libnghttp2.so.14) dirfd=-100(AT_FDCWD) name=/lib64/libnghttp2.so.14 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=404598
+1157 15:39:15.597673740 0 curl (3475) > read fd=3(<f>/lib64/libnghttp2.so.14) size=832
+1158 15:39:15.597675757 0 curl (3475) < read res=832 data=.ELF..............>.....pU......@...................@.8...@.....................
+1159 15:39:15.597676954 0 curl (3475) > fstat fd=3(<f>/lib64/libnghttp2.so.14)
+1160 15:39:15.597678220 0 curl (3475) < fstat res=0
+1161 15:39:15.597686164 0 curl (3475) > mmap addr=0 length=168016 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libnghttp2.so.14) offset=0
+1162 15:39:15.597695740 0 curl (3475) < mmap res=140630830530560 vm_size=3652 vm_rss=512 vm_swap=0
+1163 15:39:15.597696682 0 curl (3475) > mmap addr=7FE72AB31000 length=86016 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libnghttp2.so.14) offset=20480
+1164 15:39:15.597706102 0 curl (3475) < mmap res=140630830551040 vm_size=3652 vm_rss=512 vm_swap=0
+1165 15:39:15.597706830 0 curl (3475) > mmap addr=7FE72AB46000 length=49152 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libnghttp2.so.14) offset=106496
+1166 15:39:15.597712518 0 curl (3475) < mmap res=140630830637056 vm_size=3652 vm_rss=512 vm_swap=0
+1167 15:39:15.597713165 0 curl (3475) > mmap addr=7FE72AB52000 length=16384 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libnghttp2.so.14) offset=151552
+1168 15:39:15.597718861 0 curl (3475) < mmap res=140630830686208 vm_size=3652 vm_rss=512 vm_swap=0
+1169 15:39:15.597743623 0 curl (3475) > close fd=3(<f>/lib64/libnghttp2.so.14)
+1170 15:39:15.597744893 0 curl (3475) < close res=0
+1171 15:39:15.597748685 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libidn2.so.0 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1172 15:39:15.597758417 0 curl (3475) < openat fd=3(<f>/lib64/libidn2.so.0) dirfd=-100(AT_FDCWD) name=/lib64/libidn2.so.0 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401889
+1173 15:39:15.597759755 0 curl (3475) > read fd=3(<f>/lib64/libidn2.so.0) size=832
+1174 15:39:15.597761800 0 curl (3475) < read res=832 data=.ELF..............>......$......@.......X...........@.8...@.....................
+1175 15:39:15.597762738 0 curl (3475) > fstat fd=3(<f>/lib64/libidn2.so.0)
+1176 15:39:15.597764037 0 curl (3475) < fstat res=0
+1177 15:39:15.597765063 0 curl (3475) > mmap addr=0 length=131080 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libidn2.so.0) offset=0
+1178 15:39:15.597771767 0 curl (3475) < mmap res=140630830395392 vm_size=3784 vm_rss=512 vm_swap=0
+1179 15:39:15.597772507 0 curl (3475) > mmap addr=7FE72AB0D000 length=16384 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libidn2.so.0) offset=8192
+1180 15:39:15.597786219 0 curl (3475) < mmap res=140630830403584 vm_size=3784 vm_rss=512 vm_swap=0
+1181 15:39:15.597787009 0 curl (3475) > mmap addr=7FE72AB11000 length=102400 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libidn2.so.0) offset=24576
+1182 15:39:15.597793851 0 curl (3475) < mmap res=140630830419968 vm_size=3784 vm_rss=512 vm_swap=0
+1183 15:39:15.597794481 0 curl (3475) > mmap addr=7FE72AB2A000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libidn2.so.0) offset=122880
+1184 15:39:15.597803878 0 curl (3475) < mmap res=140630830522368 vm_size=3784 vm_rss=512 vm_swap=0
+1185 15:39:15.597804653 0 curl (3475) > mmap addr=7FE72AB2B000 length=8 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1186 15:39:15.597808571 0 curl (3475) < mmap res=140630830526464 vm_size=3784 vm_rss=512 vm_swap=0
+1187 15:39:15.597873706 0 curl (3475) > close fd=3(<f>/lib64/libidn2.so.0)
+1188 15:39:15.597876088 0 curl (3475) < close res=0
+1189 15:39:15.597880973 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libssh.so.4 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1190 15:39:15.597895191 0 curl (3475) < openat fd=3(<f>/lib64/libssh.so.4) dirfd=-100(AT_FDCWD) name=/lib64/libssh.so.4 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=407172
+1191 15:39:15.597896413 0 curl (3475) > read fd=3(<f>/lib64/libssh.so.4) size=832
+1192 15:39:15.597899058 0 curl (3475) < read res=832 data=.ELF..............>.............@.......xZ..........@.8...@.....................
+1193 15:39:15.597900222 0 curl (3475) > fstat fd=3(<f>/lib64/libssh.so.4)
+1194 15:39:15.597901973 0 curl (3475) < fstat res=0
+1195 15:39:15.597903845 0 curl (3475) > mmap addr=0 length=476664 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libssh.so.4) offset=0
+1196 15:39:15.597915872 0 curl (3475) < mmap res=140630829916160 vm_size=4252 vm_rss=512 vm_swap=0
+1197 15:39:15.597916698 0 curl (3475) > mprotect addr=7FE72AAA4000 length=405504 prot=0(PROT_NONE)
+1198 15:39:15.597927506 0 curl (3475) < mprotect res=0
+1199 15:39:15.597928279 0 curl (3475) > mmap addr=7FE72AAA4000 length=294912 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libssh.so.4) offset=57344
+1200 15:39:15.597943327 0 curl (3475) < mmap res=140630829973504 vm_size=4252 vm_rss=512 vm_swap=0
+1201 15:39:15.597944101 0 curl (3475) > mmap addr=7FE72AAEC000 length=106496 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libssh.so.4) offset=352256
+1202 15:39:15.597951320 0 curl (3475) < mmap res=140630830268416 vm_size=4252 vm_rss=512 vm_swap=0
+1203 15:39:15.597952020 0 curl (3475) > mmap addr=7FE72AB07000 length=16384 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libssh.so.4) offset=458752
+1204 15:39:15.597956833 0 curl (3475) < mmap res=140630830379008 vm_size=4252 vm_rss=512 vm_swap=0
+1205 15:39:15.597994175 0 curl (3475) > close fd=3(<f>/lib64/libssh.so.4)
+1206 15:39:15.597995603 0 curl (3475) < close res=0
+1207 15:39:15.597999189 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libpsl.so.5 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1208 15:39:15.598010090 0 curl (3475) < openat fd=3(<f>/lib64/libpsl.so.5) dirfd=-100(AT_FDCWD) name=/lib64/libpsl.so.5 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=403587
+1209 15:39:15.598011496 0 curl (3475) > read fd=3(<f>/lib64/libpsl.so.5) size=832
+1210 15:39:15.598013791 0 curl (3475) < read res=832 data=.ELF..............>......$......@........'..........@.8...@.....................
+1211 15:39:15.598014956 0 curl (3475) > fstat fd=3(<f>/lib64/libpsl.so.5)
+1212 15:39:15.598016364 0 curl (3475) < fstat res=0
+1213 15:39:15.598017212 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1214 15:39:15.598023324 0 curl (3475) < mmap res=140630829907968 vm_size=4260 vm_rss=512 vm_swap=0
+1215 15:39:15.598032633 0 curl (3475) > mmap addr=0 length=77832 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libpsl.so.5) offset=0
+1216 15:39:15.598039893 0 curl (3475) < mmap res=140630829826048 vm_size=4340 vm_rss=512 vm_swap=0
+1217 15:39:15.598040626 0 curl (3475) > mmap addr=7FE72AA82000 length=8192 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libpsl.so.5) offset=8192
+1218 15:39:15.598050687 0 curl (3475) < mmap res=140630829834240 vm_size=4340 vm_rss=512 vm_swap=0
+1219 15:39:15.598051493 0 curl (3475) > mmap addr=7FE72AA84000 length=57344 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libpsl.so.5) offset=16384
+1220 15:39:15.598057147 0 curl (3475) < mmap res=140630829842432 vm_size=4340 vm_rss=512 vm_swap=0
+1221 15:39:15.598057839 0 curl (3475) > mmap addr=7FE72AA92000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libpsl.so.5) offset=69632
+1222 15:39:15.598067663 0 curl (3475) < mmap res=140630829899776 vm_size=4340 vm_rss=512 vm_swap=0
+1223 15:39:15.598068419 0 curl (3475) > mmap addr=7FE72AA93000 length=8 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1224 15:39:15.598072583 0 curl (3475) < mmap res=140630829903872 vm_size=4340 vm_rss=512 vm_swap=0
+1225 15:39:15.598090663 0 curl (3475) > close fd=3(<f>/lib64/libpsl.so.5)
+1226 15:39:15.598091925 0 curl (3475) < close res=0
+1227 15:39:15.598094610 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libssl.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1228 15:39:15.598104738 0 curl (3475) < openat fd=3(<f>/lib64/libssl.so.3) dirfd=-100(AT_FDCWD) name=/lib64/libssl.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=410885
+1229 15:39:15.598105887 0 curl (3475) > read fd=3(<f>/lib64/libssl.so.3) size=832
+1230 15:39:15.598108477 0 curl (3475) < read res=832 data=.ELF..............>......f......@...................@.8...@.....................
+1231 15:39:15.598109546 0 curl (3475) > fstat fd=3(<f>/lib64/libssl.so.3)
+1232 15:39:15.598110860 0 curl (3475) < fstat res=0
+1233 15:39:15.598111889 0 curl (3475) > mmap addr=0 length=941456 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libssl.so.3) offset=0
+1234 15:39:15.598118428 0 curl (3475) < mmap res=140630826262528 vm_size=5260 vm_rss=512 vm_swap=0
+1235 15:39:15.598119102 0 curl (3475) > mmap addr=7FE72A73C000 length=577536 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libssl.so.3) offset=139264
+1236 15:39:15.598128334 0 curl (3475) < mmap res=140630826401792 vm_size=5260 vm_rss=512 vm_swap=0
+1237 15:39:15.598129121 0 curl (3475) > mmap addr=7FE72A7C9000 length=163840 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libssl.so.3) offset=716800
+1238 15:39:15.598135432 0 curl (3475) < mmap res=140630826979328 vm_size=5260 vm_rss=512 vm_swap=0
+1239 15:39:15.598136072 0 curl (3475) > mmap addr=7FE72A7F1000 length=61440 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libssl.so.3) offset=876544
+1240 15:39:15.598142226 0 curl (3475) < mmap res=140630827143168 vm_size=5260 vm_rss=512 vm_swap=0
+1241 15:39:15.598171196 0 curl (3475) > close fd=3(<f>/lib64/libssl.so.3)
+1242 15:39:15.598172450 0 curl (3475) < close res=0
+1243 15:39:15.598175962 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libcrypto.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1244 15:39:15.598185830 0 curl (3475) < openat fd=3(<f>/lib64/libcrypto.so.3) dirfd=-100(AT_FDCWD) name=/lib64/libcrypto.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=410883
+1245 15:39:15.598187207 0 curl (3475) > read fd=3(<f>/lib64/libcrypto.so.3) size=832
+1246 15:39:15.598189533 0 curl (3475) < read res=832 data=.ELF..............>......`......@.........R.........@.8...@.....................
+1247 15:39:15.598190510 0 curl (3475) > fstat fd=3(<f>/lib64/libcrypto.so.3)
+1248 15:39:15.598191876 0 curl (3475) < fstat res=0
+1249 15:39:15.598192912 0 curl (3475) > mmap addr=0 length=5344208 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypto.so.3) offset=0
+1250 15:39:15.598201106 0 curl (3475) < mmap res=140630820913152 vm_size=10480 vm_rss=640 vm_swap=0
+1251 15:39:15.598201873 0 curl (3475) > mmap addr=7FE72A2B4000 length=3334144 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypto.so.3) offset=737280
+1252 15:39:15.598215820 0 curl (3475) < mmap res=140630821650432 vm_size=10480 vm_rss=640 vm_swap=0
+1253 15:39:15.598216543 0 curl (3475) > mmap addr=7FE72A5E2000 length=876544 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypto.so.3) offset=4071424
+1254 15:39:15.598224480 0 curl (3475) < mmap res=140630824984576 vm_size=10480 vm_rss=640 vm_swap=0
+1255 15:39:15.598225181 0 curl (3475) > mmap addr=7FE72A6B8000 length=385024 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypto.so.3) offset=4943872
+1256 15:39:15.598233450 0 curl (3475) < mmap res=140630825861120 vm_size=10480 vm_rss=640 vm_swap=0
+1257 15:39:15.598244041 0 curl (3475) > mmap addr=7FE72A716000 length=11216 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1258 15:39:15.598257383 0 curl (3475) < mmap res=140630826246144 vm_size=10480 vm_rss=640 vm_swap=0
+1259 15:39:15.598277483 0 curl (3475) > close fd=3(<f>/lib64/libcrypto.so.3)
+1260 15:39:15.598278764 0 curl (3475) < close res=0
+1261 15:39:15.598289380 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libgssapi_krb5.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1262 15:39:15.598300545 0 curl (3475) < openat fd=3(<f>/lib64/libgssapi_krb5.so.2) dirfd=-100(AT_FDCWD) name=/lib64/libgssapi_krb5.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=406587
+1263 15:39:15.598301980 0 curl (3475) > read fd=3(<f>/lib64/libgssapi_krb5.so.2) size=832
+1264 15:39:15.598304485 0 curl (3475) < read res=832 data=.ELF..............>.............@.......pq..........@.8...@.....................
+1265 15:39:15.598305527 0 curl (3475) > fstat fd=3(<f>/lib64/libgssapi_krb5.so.2)
+1266 15:39:15.598306830 0 curl (3475) < fstat res=0
+1267 15:39:15.598314689 0 curl (3475) > mmap addr=0 length=350944 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libgssapi_krb5.so.2) offset=0
+1268 15:39:15.598324078 0 curl (3475) < mmap res=140630829473792 vm_size=10824 vm_rss=768 vm_swap=0
+1269 15:39:15.598324849 0 curl (3475) > mmap addr=7FE72AA36000 length=241664 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libgssapi_krb5.so.2) offset=49152
+1270 15:39:15.598343703 0 curl (3475) < mmap res=140630829522944 vm_size=10824 vm_rss=768 vm_swap=0
+1271 15:39:15.598344547 0 curl (3475) > mmap addr=7FE72AA71000 length=49152 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libgssapi_krb5.so.2) offset=290816
+1272 15:39:15.598352198 0 curl (3475) < mmap res=140630829764608 vm_size=10824 vm_rss=768 vm_swap=0
+1273 15:39:15.598352874 0 curl (3475) > mmap addr=7FE72AA7D000 length=12288 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libgssapi_krb5.so.2) offset=339968
+1274 15:39:15.598358771 0 curl (3475) < mmap res=140630829813760 vm_size=10824 vm_rss=768 vm_swap=0
+1275 15:39:15.598394598 0 curl (3475) > close fd=3(<f>/lib64/libgssapi_krb5.so.2)
+1276 15:39:15.598395995 0 curl (3475) < close res=0
+1277 15:39:15.598399194 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libkrb5.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1278 15:39:15.598409430 0 curl (3475) < openat fd=3(<f>/lib64/libkrb5.so.3) dirfd=-100(AT_FDCWD) name=/lib64/libkrb5.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=406597
+1279 15:39:15.598410768 0 curl (3475) > read fd=3(<f>/lib64/libkrb5.so.3) size=832
+1280 15:39:15.598412966 0 curl (3475) < read res=832 data=.ELF..............>.....0p......@.......`...........@.8...@.....................
+1281 15:39:15.598414038 0 curl (3475) > fstat fd=3(<f>/lib64/libkrb5.so.3)
+1282 15:39:15.598415288 0 curl (3475) < fstat res=0
+1283 15:39:15.598416402 0 curl (3475) > mmap addr=0 length=889616 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5.so.3) offset=0
+1284 15:39:15.598422894 0 curl (3475) < mmap res=140630820020224 vm_size=11696 vm_rss=1024 vm_swap=0
+1285 15:39:15.598423635 0 curl (3475) > mmap addr=7FE72A148000 length=434176 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5.so.3) offset=139264
+1286 15:39:15.598432139 0 curl (3475) < mmap res=140630820159488 vm_size=11696 vm_rss=1024 vm_swap=0
+1287 15:39:15.598432906 0 curl (3475) > mmap addr=7FE72A1B2000 length=253952 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5.so.3) offset=573440
+1288 15:39:15.598439260 0 curl (3475) < mmap res=140630820593664 vm_size=11696 vm_rss=1024 vm_swap=0
+1289 15:39:15.598439908 0 curl (3475) > mmap addr=7FE72A1F0000 length=61440 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5.so.3) offset=827392
+1290 15:39:15.598447569 0 curl (3475) < mmap res=140630820847616 vm_size=11696 vm_rss=1024 vm_swap=0
+1291 15:39:15.598460039 0 curl (3475) > mmap addr=7FE72A1FF000 length=784 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1292 15:39:15.598467346 0 curl (3475) < mmap res=140630820909056 vm_size=11696 vm_rss=1024 vm_swap=0
+1293 15:39:15.598488055 0 curl (3475) > close fd=3(<f>/lib64/libkrb5.so.3)
+1294 15:39:15.598489298 0 curl (3475) < close res=0
+1295 15:39:15.598492846 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libk5crypto.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1296 15:39:15.598503160 0 curl (3475) < openat fd=3(<f>/lib64/libk5crypto.so.3) dirfd=-100(AT_FDCWD) name=/lib64/libk5crypto.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=406591
+1297 15:39:15.598504551 0 curl (3475) > read fd=3(<f>/lib64/libk5crypto.so.3) size=832
+1298 15:39:15.598506673 0 curl (3475) < read res=832 data=.ELF..............>.....p_......@........{..........@.8...@.....................
+1299 15:39:15.598507641 0 curl (3475) > fstat fd=3(<f>/lib64/libk5crypto.so.3)
+1300 15:39:15.598508948 0 curl (3475) < fstat res=0
+1301 15:39:15.598510094 0 curl (3475) > mmap addr=0 length=98352 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libk5crypto.so.3) offset=0
+1302 15:39:15.598516831 0 curl (3475) < mmap res=140630829371392 vm_size=11796 vm_rss=1152 vm_swap=0
+1303 15:39:15.598517598 0 curl (3475) > mmap addr=7FE72AA16000 length=53248 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libk5crypto.so.3) offset=20480
+1304 15:39:15.598532050 0 curl (3475) < mmap res=140630829391872 vm_size=11796 vm_rss=1152 vm_swap=0
+1305 15:39:15.598532770 0 curl (3475) > mmap addr=7FE72AA23000 length=16384 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libk5crypto.so.3) offset=73728
+1306 15:39:15.598540027 0 curl (3475) < mmap res=140630829445120 vm_size=11796 vm_rss=1152 vm_swap=0
+1307 15:39:15.598540658 0 curl (3475) > mmap addr=7FE72AA27000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libk5crypto.so.3) offset=86016
+1308 15:39:15.598547736 0 curl (3475) < mmap res=140630829461504 vm_size=11796 vm_rss=1152 vm_swap=0
+1309 15:39:15.598558063 0 curl (3475) > mmap addr=7FE72AA29000 length=48 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1310 15:39:15.598564499 0 curl (3475) < mmap res=140630829469696 vm_size=11796 vm_rss=1152 vm_swap=0
+1311 15:39:15.598570675 0 curl (3475) > close fd=3(<f>/lib64/libk5crypto.so.3)
+1312 15:39:15.598571767 0 curl (3475) < close res=0
+1313 15:39:15.598574985 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libcom_err.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1314 15:39:15.598585284 0 curl (3475) < openat fd=3(<f>/lib64/libcom_err.so.2) dirfd=-100(AT_FDCWD) name=/lib64/libcom_err.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401638
+1315 15:39:15.598586626 0 curl (3475) > read fd=3(<f>/lib64/libcom_err.so.2) size=832
+1316 15:39:15.598588796 0 curl (3475) < read res=832 data=.ELF..............>......$......@........V..........@.8...@.....................
+1317 15:39:15.598589775 0 curl (3475) > fstat fd=3(<f>/lib64/libcom_err.so.2)
+1318 15:39:15.598591095 0 curl (3475) < fstat res=0
+1319 15:39:15.598592038 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1320 15:39:15.598597159 0 curl (3475) < mmap res=140630829363200 vm_size=11804 vm_rss=1152 vm_swap=0
+1321 15:39:15.598605710 0 curl (3475) > mmap addr=0 length=24640 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libcom_err.so.2) offset=0
+1322 15:39:15.598613074 0 curl (3475) < mmap res=140630829334528 vm_size=11832 vm_rss=1152 vm_swap=0
+1323 15:39:15.598613784 0 curl (3475) > mmap addr=7FE72AA0A000 length=8192 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcom_err.so.2) offset=8192
+1324 15:39:15.598623479 0 curl (3475) < mmap res=140630829342720 vm_size=11832 vm_rss=1152 vm_swap=0
+1325 15:39:15.598624176 0 curl (3475) > mmap addr=7FE72AA0C000 length=4096 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcom_err.so.2) offset=16384
+1326 15:39:15.598630874 0 curl (3475) < mmap res=140630829350912 vm_size=11832 vm_rss=1152 vm_swap=0
+1327 15:39:15.598631515 0 curl (3475) > mmap addr=7FE72AA0D000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcom_err.so.2) offset=16384
+1328 15:39:15.598638194 0 curl (3475) < mmap res=140630829355008 vm_size=11832 vm_rss=1152 vm_swap=0
+1329 15:39:15.598663611 0 curl (3475) > close fd=3(<f>/lib64/libcom_err.so.2)
+1330 15:39:15.598664901 0 curl (3475) < close res=0
+1331 15:39:15.598669668 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libldap.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1332 15:39:15.598680794 0 curl (3475) < openat fd=3(<f>/lib64/libldap.so.2) dirfd=-100(AT_FDCWD) name=/lib64/libldap.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=411474
+1333 15:39:15.598682047 0 curl (3475) > read fd=3(<f>/lib64/libldap.so.2) size=832
+1334 15:39:15.598684150 0 curl (3475) < read res=832 data=.ELF..............>......]......@.......pX..........@.8...@.....................
+1335 15:39:15.598685134 0 curl (3475) > fstat fd=3(<f>/lib64/libldap.so.2)
+1336 15:39:15.598686447 0 curl (3475) < fstat res=0
+1337 15:39:15.598687593 0 curl (3475) > mmap addr=0 length=420760 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libldap.so.2) offset=0
+1338 15:39:15.598693990 0 curl (3475) < mmap res=140630819598336 vm_size=12244 vm_rss=1152 vm_swap=0
+1339 15:39:15.598694763 0 curl (3475) > mprotect addr=7FE72A0D0000 length=331776 prot=0(PROT_NONE)
+1340 15:39:15.598705349 0 curl (3475) < mprotect res=0
+1341 15:39:15.598706095 0 curl (3475) > mmap addr=7FE72A0D0000 length=258048 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libldap.so.2) offset=69632
+1342 15:39:15.598714416 0 curl (3475) < mmap res=140630819667968 vm_size=12244 vm_rss=1152 vm_swap=0
+1343 15:39:15.598715140 0 curl (3475) > mmap addr=7FE72A10F000 length=69632 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libldap.so.2) offset=327680
+1344 15:39:15.598721271 0 curl (3475) < mmap res=140630819926016 vm_size=12244 vm_rss=1152 vm_swap=0
+1345 15:39:15.598721955 0 curl (3475) > mmap addr=7FE72A121000 length=12288 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libldap.so.2) offset=397312
+1346 15:39:15.598727655 0 curl (3475) < mmap res=140630819999744 vm_size=12244 vm_rss=1152 vm_swap=0
+1347 15:39:15.598738476 0 curl (3475) > mmap addr=7FE72A124000 length=7064 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1348 15:39:15.598745043 0 curl (3475) < mmap res=140630820012032 vm_size=12244 vm_rss=1152 vm_swap=0
+1349 15:39:15.598761911 0 curl (3475) > close fd=3(<f>/lib64/libldap.so.2)
+1350 15:39:15.598763115 0 curl (3475) < close res=0
+1351 15:39:15.598766896 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/liblber.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1352 15:39:15.598777452 0 curl (3475) < openat fd=3(<f>/lib64/liblber.so.2) dirfd=-100(AT_FDCWD) name=/lib64/liblber.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=411470
+1353 15:39:15.598778766 0 curl (3475) > read fd=3(<f>/lib64/liblber.so.2) size=832
+1354 15:39:15.598780482 0 curl (3475) < read res=832 data=.ELF..............>......L......@...................@.8...@.....................
+1355 15:39:15.598781543 0 curl (3475) > fstat fd=3(<f>/lib64/liblber.so.2)
+1356 15:39:15.598782870 0 curl (3475) < fstat res=0
+1357 15:39:15.598784057 0 curl (3475) > mmap addr=0 length=70088 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/liblber.so.2) offset=0
+1358 15:39:15.598790114 0 curl (3475) < mmap res=140630819524608 vm_size=12316 vm_rss=1152 vm_swap=0
+1359 15:39:15.598790879 0 curl (3475) > mprotect addr=7FE72A0B1000 length=49152 prot=0(PROT_NONE)
+1360 15:39:15.598798128 0 curl (3475) < mprotect res=0
+1361 15:39:15.598798825 0 curl (3475) > mmap addr=7FE72A0B1000 length=32768 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/liblber.so.2) offset=16384
+1362 15:39:15.598806812 0 curl (3475) < mmap res=140630819540992 vm_size=12316 vm_rss=1152 vm_swap=0
+1363 15:39:15.598807523 0 curl (3475) > mmap addr=7FE72A0B9000 length=12288 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/liblber.so.2) offset=49152
+1364 15:39:15.598813098 0 curl (3475) < mmap res=140630819573760 vm_size=12316 vm_rss=1152 vm_swap=0
+1365 15:39:15.598813739 0 curl (3475) > mmap addr=7FE72A0BD000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/liblber.so.2) offset=61440
+1366 15:39:15.598822307 0 curl (3475) < mmap res=140630819590144 vm_size=12316 vm_rss=1152 vm_swap=0
+1367 15:39:15.598845821 0 curl (3475) > close fd=3(<f>/lib64/liblber.so.2)
+1368 15:39:15.598847071 0 curl (3475) < close res=0
+1369 15:39:15.598850587 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libbrotlidec.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1370 15:39:15.598860459 0 curl (3475) < openat fd=3(<f>/lib64/libbrotlidec.so.1) dirfd=-100(AT_FDCWD) name=/lib64/libbrotlidec.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=404530
+1371 15:39:15.598861908 0 curl (3475) > read fd=3(<f>/lib64/libbrotlidec.so.1) size=832
+1372 15:39:15.598863912 0 curl (3475) < read res=832 data=.ELF..............>.............@.......p...........@.8...@.....................
+1373 15:39:15.598864954 0 curl (3475) > fstat fd=3(<f>/lib64/libbrotlidec.so.1)
+1374 15:39:15.598866247 0 curl (3475) < fstat res=0
+1375 15:39:15.598874175 0 curl (3475) > mmap addr=0 length=53256 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlidec.so.1) offset=0
+1376 15:39:15.598882706 0 curl (3475) < mmap res=140630819467264 vm_size=12372 vm_rss=1280 vm_swap=0
+1377 15:39:15.598883536 0 curl (3475) > mmap addr=7FE72A0A0000 length=32768 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlidec.so.1) offset=4096
+1378 15:39:15.598895255 0 curl (3475) < mmap res=140630819471360 vm_size=12372 vm_rss=1280 vm_swap=0
+1379 15:39:15.598896089 0 curl (3475) > mmap addr=7FE72A0A8000 length=12288 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlidec.so.1) offset=36864
+1380 15:39:15.598902387 0 curl (3475) < mmap res=140630819504128 vm_size=12372 vm_rss=1280 vm_swap=0
+1381 15:39:15.598903042 0 curl (3475) > mmap addr=7FE72A0AB000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlidec.so.1) offset=45056
+1382 15:39:15.598910811 0 curl (3475) < mmap res=140630819516416 vm_size=12372 vm_rss=1280 vm_swap=0
+1383 15:39:15.598911587 0 curl (3475) > mmap addr=7FE72A0AC000 length=8 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1384 15:39:15.598915630 0 curl (3475) < mmap res=140630819520512 vm_size=12372 vm_rss=1280 vm_swap=0
+1385 15:39:15.598932833 0 curl (3475) > close fd=3(<f>/lib64/libbrotlidec.so.1)
+1386 15:39:15.598934108 0 curl (3475) < close res=0
+1387 15:39:15.598941740 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libunistring.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1388 15:39:15.598951364 0 curl (3475) < openat fd=3(<f>/lib64/libunistring.so.2) dirfd=-100(AT_FDCWD) name=/lib64/libunistring.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401826
+1389 15:39:15.598952819 0 curl (3475) > read fd=3(<f>/lib64/libunistring.so.2) size=832
+1390 15:39:15.598954846 0 curl (3475) < read res=832 data=.ELF..............>.....02......@.......0C..........@.8...@.....................
+1391 15:39:15.598955813 0 curl (3475) > fstat fd=3(<f>/lib64/libunistring.so.2)
+1392 15:39:15.598957065 0 curl (3475) < fstat res=0
+1393 15:39:15.598958299 0 curl (3475) > mmap addr=0 length=1591504 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libunistring.so.2) offset=0
+1394 15:39:15.598965501 0 curl (3475) < mmap res=140630817873920 vm_size=13928 vm_rss=1280 vm_swap=0
+1395 15:39:15.598966194 0 curl (3475) > mmap addr=7FE729F2B000 length=229376 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libunistring.so.2) offset=69632
+1396 15:39:15.598979598 0 curl (3475) < mmap res=140630817943552 vm_size=13928 vm_rss=1280 vm_swap=0
+1397 15:39:15.598980302 0 curl (3475) > mmap addr=7FE729F63000 length=1273856 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libunistring.so.2) offset=299008
+1398 15:39:15.598986638 0 curl (3475) < mmap res=140630818172928 vm_size=13928 vm_rss=1280 vm_swap=0
+1399 15:39:15.598987277 0 curl (3475) > mmap addr=7FE72A09A000 length=20480 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libunistring.so.2) offset=1568768
+1400 15:39:15.598993168 0 curl (3475) < mmap res=140630819446784 vm_size=13928 vm_rss=1280 vm_swap=0
+1401 15:39:15.599020803 0 curl (3475) > close fd=3(<f>/lib64/libunistring.so.2)
+1402 15:39:15.599022054 0 curl (3475) < close res=0
+1403 15:39:15.599039475 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libkrb5support.so.0 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1404 15:39:15.599049039 0 curl (3475) < openat fd=3(<f>/lib64/libkrb5support.so.0) dirfd=-100(AT_FDCWD) name=/lib64/libkrb5support.so.0 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=406599
+1405 15:39:15.599050489 0 curl (3475) > read fd=3(<f>/lib64/libkrb5support.so.0) size=832
+1406 15:39:15.599052422 0 curl (3475) < read res=832 data=.ELF..............>.....PO......@...................@.8...@.....................
+1407 15:39:15.599053446 0 curl (3475) > fstat fd=3(<f>/lib64/libkrb5support.so.0)
+1408 15:39:15.599054853 0 curl (3475) < fstat res=0
+1409 15:39:15.599055858 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1410 15:39:15.599061978 0 curl (3475) < mmap res=140630817865728 vm_size=13936 vm_rss=1280 vm_swap=0
+1411 15:39:15.599070587 0 curl (3475) > mmap addr=0 length=66192 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5support.so.0) offset=0
+1412 15:39:15.599078238 0 curl (3475) < mmap res=140630817796096 vm_size=14004 vm_rss=1280 vm_swap=0
+1413 15:39:15.599078975 0 curl (3475) > mmap addr=7FE729F0B000 length=32768 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5support.so.0) offset=16384
+1414 15:39:15.599092078 0 curl (3475) < mmap res=140630817812480 vm_size=14004 vm_rss=1280 vm_swap=0
+1415 15:39:15.599092803 0 curl (3475) > mmap addr=7FE729F13000 length=12288 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5support.so.0) offset=49152
+1416 15:39:15.599099711 0 curl (3475) < mmap res=140630817845248 vm_size=14004 vm_rss=1280 vm_swap=0
+1417 15:39:15.599100337 0 curl (3475) > mmap addr=7FE729F16000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkrb5support.so.0) offset=57344
+1418 15:39:15.599109186 0 curl (3475) < mmap res=140630817857536 vm_size=14004 vm_rss=1280 vm_swap=0
+1419 15:39:15.599133592 0 curl (3475) > close fd=3(<f>/lib64/libkrb5support.so.0)
+1420 15:39:15.599134872 0 curl (3475) < close res=0
+1421 15:39:15.599138871 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libkeyutils.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1422 15:39:15.599148956 0 curl (3475) < openat fd=3(<f>/lib64/libkeyutils.so.1) dirfd=-100(AT_FDCWD) name=/lib64/libkeyutils.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401949
+1423 15:39:15.599150307 0 curl (3475) > read fd=3(<f>/lib64/libkeyutils.so.1) size=832
+1424 15:39:15.599152116 0 curl (3475) < read res=832 data=.ELF..............>......$......@........V..........@.8...@.....................
+1425 15:39:15.599153151 0 curl (3475) > fstat fd=3(<f>/lib64/libkeyutils.so.1)
+1426 15:39:15.599154509 0 curl (3475) < fstat res=0
+1427 15:39:15.599155724 0 curl (3475) > mmap addr=0 length=24584 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libkeyutils.so.1) offset=0
+1428 15:39:15.599161726 0 curl (3475) < mmap res=140630817767424 vm_size=14032 vm_rss=1280 vm_swap=0
+1429 15:39:15.599162453 0 curl (3475) > mmap addr=7FE729F02000 length=8192 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkeyutils.so.1) offset=8192
+1430 15:39:15.599171974 0 curl (3475) < mmap res=140630817775616 vm_size=14032 vm_rss=1280 vm_swap=0
+1431 15:39:15.599172689 0 curl (3475) > mmap addr=7FE729F04000 length=4096 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkeyutils.so.1) offset=16384
+1432 15:39:15.599178909 0 curl (3475) < mmap res=140630817783808 vm_size=14032 vm_rss=1280 vm_swap=0
+1433 15:39:15.599179571 0 curl (3475) > mmap addr=7FE729F05000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libkeyutils.so.1) offset=16384
+1434 15:39:15.599185885 0 curl (3475) < mmap res=140630817787904 vm_size=14032 vm_rss=1280 vm_swap=0
+1435 15:39:15.599186646 0 curl (3475) > mmap addr=7FE729F06000 length=8 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1436 15:39:15.599189974 0 curl (3475) < mmap res=140630817792000 vm_size=14032 vm_rss=1280 vm_swap=0
+1437 15:39:15.599207130 0 curl (3475) > close fd=3(<f>/lib64/libkeyutils.so.1)
+1438 15:39:15.599208394 0 curl (3475) < close res=0
+1439 15:39:15.599213732 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libresolv.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1440 15:39:15.599222398 0 curl (3475) < openat fd=3(<f>/lib64/libresolv.so.2) dirfd=-100(AT_FDCWD) name=/lib64/libresolv.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401281
+1441 15:39:15.599223690 0 curl (3475) > read fd=3(<f>/lib64/libresolv.so.2) size=832
+1442 15:39:15.599225674 0 curl (3475) < read res=832 data=.ELF..............>......F......@...................@.8...@. ...................
+1443 15:39:15.599226769 0 curl (3475) > fstat fd=3(<f>/lib64/libresolv.so.2)
+1444 15:39:15.599228070 0 curl (3475) < fstat res=0
+1445 15:39:15.599229289 0 curl (3475) > mmap addr=0 length=80456 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libresolv.so.2) offset=0
+1446 15:39:15.599235486 0 curl (3475) < mmap res=140630817685504 vm_size=14112 vm_rss=1280 vm_swap=0
+1447 15:39:15.599236241 0 curl (3475) > mmap addr=7FE729EF0000 length=36864 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libresolv.so.2) offset=16384
+1448 15:39:15.599248587 0 curl (3475) < mmap res=140630817701888 vm_size=14112 vm_rss=1280 vm_swap=0
+1449 15:39:15.599249361 0 curl (3475) > mmap addr=7FE729EF9000 length=12288 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libresolv.so.2) offset=53248
+1450 15:39:15.599256458 0 curl (3475) < mmap res=140630817738752 vm_size=14112 vm_rss=1280 vm_swap=0
+1451 15:39:15.599257109 0 curl (3475) > mmap addr=7FE729EFC000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libresolv.so.2) offset=61440
+1452 15:39:15.599264794 0 curl (3475) < mmap res=140630817751040 vm_size=14112 vm_rss=1280 vm_swap=0
+1453 15:39:15.599274720 0 curl (3475) > mmap addr=7FE729EFE000 length=6728 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1454 15:39:15.599281598 0 curl (3475) < mmap res=140630817759232 vm_size=14112 vm_rss=1280 vm_swap=0
+1455 15:39:15.599298592 0 curl (3475) > close fd=3(<f>/lib64/libresolv.so.2)
+1456 15:39:15.599299800 0 curl (3475) < close res=0
+1457 15:39:15.599440309 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libevent-2.1.so.7 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1458 15:39:15.599455867 0 curl (3475) < openat fd=3(<f>/lib64/libevent-2.1.so.7) dirfd=-100(AT_FDCWD) name=/lib64/libevent-2.1.so.7 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=411452
+1459 15:39:15.599457896 0 curl (3475) > read fd=3(<f>/lib64/libevent-2.1.so.7) size=832
+1460 15:39:15.599461442 0 curl (3475) < read res=832 data=.ELF..............>.............@.......0...........@.8...@.....................
+1461 15:39:15.599462987 0 curl (3475) > fstat fd=3(<f>/lib64/libevent-2.1.so.7)
+1462 15:39:15.599464662 0 curl (3475) < fstat res=0
+1463 15:39:15.599466464 0 curl (3475) > mmap addr=0 length=362792 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libevent-2.1.so.7) offset=0
+1464 15:39:15.599478099 0 curl (3475) < mmap res=140630817320960 vm_size=14468 vm_rss=1280 vm_swap=0
+1465 15:39:15.599478924 0 curl (3475) > mprotect addr=7FE729EA1000 length=294912 prot=0(PROT_NONE)
+1466 15:39:15.599489784 0 curl (3475) < mprotect res=0
+1467 15:39:15.599490572 0 curl (3475) > mmap addr=7FE729EA1000 length=212992 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libevent-2.1.so.7) offset=57344
+1468 15:39:15.599504271 0 curl (3475) < mmap res=140630817378304 vm_size=14468 vm_rss=1280 vm_swap=0
+1469 15:39:15.599505094 0 curl (3475) > mmap addr=7FE729ED5000 length=77824 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libevent-2.1.so.7) offset=270336
+1470 15:39:15.599511254 0 curl (3475) < mmap res=140630817591296 vm_size=14468 vm_rss=1280 vm_swap=0
+1471 15:39:15.599511907 0 curl (3475) > mmap addr=7FE729EE9000 length=12288 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libevent-2.1.so.7) offset=348160
+1472 15:39:15.599516786 0 curl (3475) < mmap res=140630817673216 vm_size=14468 vm_rss=1280 vm_swap=0
+1473 15:39:15.599547437 0 curl (3475) > close fd=3(<f>/lib64/libevent-2.1.so.7)
+1474 15:39:15.599548892 0 curl (3475) < close res=0
+1475 15:39:15.599555680 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libsasl2.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1476 15:39:15.599567054 0 curl (3475) < openat fd=3(<f>/lib64/libsasl2.so.3) dirfd=-100(AT_FDCWD) name=/lib64/libsasl2.so.3 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=407146
+1477 15:39:15.599568757 0 curl (3475) > read fd=3(<f>/lib64/libsasl2.so.3) size=832
+1478 15:39:15.599571042 0 curl (3475) < read res=832 data=.ELF..............>......a......@...................@.8...@.....................
+1479 15:39:15.599572162 0 curl (3475) > fstat fd=3(<f>/lib64/libsasl2.so.3)
+1480 15:39:15.599573566 0 curl (3475) < fstat res=0
+1481 15:39:15.599575056 0 curl (3475) > mmap addr=0 length=127960 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libsasl2.so.3) offset=0
+1482 15:39:15.599581112 0 curl (3475) < mmap res=140630817189888 vm_size=14596 vm_rss=1408 vm_swap=0
+1483 15:39:15.599581911 0 curl (3475) > mmap addr=7FE729E78000 length=77824 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libsasl2.so.3) offset=20480
+1484 15:39:15.599591430 0 curl (3475) < mmap res=140630817210368 vm_size=14596 vm_rss=1408 vm_swap=0
+1485 15:39:15.599592126 0 curl (3475) > mmap addr=7FE729E8B000 length=24576 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libsasl2.so.3) offset=98304
+1486 15:39:15.599598180 0 curl (3475) < mmap res=140630817288192 vm_size=14596 vm_rss=1408 vm_swap=0
+1487 15:39:15.599598848 0 curl (3475) > mmap addr=7FE729E91000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libsasl2.so.3) offset=118784
+1488 15:39:15.599604326 0 curl (3475) < mmap res=140630817312768 vm_size=14596 vm_rss=1408 vm_swap=0
+1489 15:39:15.599629516 0 curl (3475) > close fd=3(<f>/lib64/libsasl2.so.3)
+1490 15:39:15.599630870 0 curl (3475) < close res=0
+1491 15:39:15.599639141 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libbrotlicommon.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1492 15:39:15.599649490 0 curl (3475) < openat fd=3(<f>/lib64/libbrotlicommon.so.1) dirfd=-100(AT_FDCWD) name=/lib64/libbrotlicommon.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=404528
+1493 15:39:15.599650917 0 curl (3475) > read fd=3(<f>/lib64/libbrotlicommon.so.1) size=832
+1494 15:39:15.599652699 0 curl (3475) < read res=832 data=.ELF..............>.............@...................@.8...@.....................
+1495 15:39:15.599653660 0 curl (3475) > fstat fd=3(<f>/lib64/libbrotlicommon.so.1)
+1496 15:39:15.599654977 0 curl (3475) < fstat res=0
+1497 15:39:15.599656028 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1498 15:39:15.599661863 0 curl (3475) < mmap res=140630817181696 vm_size=14604 vm_rss=1408 vm_swap=0
+1499 15:39:15.599670967 0 curl (3475) > mmap addr=0 length=139272 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlicommon.so.1) offset=0
+1500 15:39:15.599679669 0 curl (3475) < mmap res=140630817038336 vm_size=14744 vm_rss=1408 vm_swap=0
+1501 15:39:15.599680449 0 curl (3475) > mmap addr=7FE729E4F000 length=4096 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlicommon.so.1) offset=4096
+1502 15:39:15.599692585 0 curl (3475) < mmap res=140630817042432 vm_size=14744 vm_rss=1408 vm_swap=0
+1503 15:39:15.599693300 0 curl (3475) > mmap addr=7FE729E50000 length=126976 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlicommon.so.1) offset=8192
+1504 15:39:15.599698837 0 curl (3475) < mmap res=140630817046528 vm_size=14744 vm_rss=1408 vm_swap=0
+1505 15:39:15.599699510 0 curl (3475) > mmap addr=7FE729E6F000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libbrotlicommon.so.1) offset=131072
+1506 15:39:15.599707583 0 curl (3475) < mmap res=140630817173504 vm_size=14744 vm_rss=1408 vm_swap=0
+1507 15:39:15.599717924 0 curl (3475) > mmap addr=7FE729E70000 length=8 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1508 15:39:15.599725360 0 curl (3475) < mmap res=140630817177600 vm_size=14744 vm_rss=1408 vm_swap=0
+1509 15:39:15.599730718 0 curl (3475) > close fd=3(<f>/lib64/libbrotlicommon.so.1)
+1510 15:39:15.599731906 0 curl (3475) < close res=0
+1511 15:39:15.599741423 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libselinux.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1512 15:39:15.599750390 0 curl (3475) < openat fd=3(<f>/lib64/libselinux.so.1) dirfd=-100(AT_FDCWD) name=/lib64/libselinux.so.1 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=402008
+1513 15:39:15.599751729 0 curl (3475) > read fd=3(<f>/lib64/libselinux.so.1) size=832
+1514 15:39:15.599753807 0 curl (3475) < read res=832 data=.ELF..............>.....pp......@...................@.8...@.....................
+1515 15:39:15.599754838 0 curl (3475) > fstat fd=3(<f>/lib64/libselinux.so.1)
+1516 15:39:15.599756162 0 curl (3475) < fstat res=0
+1517 15:39:15.599757816 0 curl (3475) > mmap addr=0 length=181896 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libselinux.so.1) offset=0
+1518 15:39:15.599765374 0 curl (3475) < mmap res=140630816854016 vm_size=14924 vm_rss=1408 vm_swap=0
+1519 15:39:15.599766071 0 curl (3475) > mmap addr=7FE729E27000 length=110592 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libselinux.so.1) offset=24576
+1520 15:39:15.599775870 0 curl (3475) < mmap res=140630816878592 vm_size=14924 vm_rss=1408 vm_swap=0
+1521 15:39:15.599776582 0 curl (3475) > mmap addr=7FE729E42000 length=32768 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libselinux.so.1) offset=135168
+1522 15:39:15.599783589 0 curl (3475) < mmap res=140630816989184 vm_size=14924 vm_rss=1408 vm_swap=0
+1523 15:39:15.599784244 0 curl (3475) > mmap addr=7FE729E4A000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libselinux.so.1) offset=163840
+1524 15:39:15.599794420 0 curl (3475) < mmap res=140630817021952 vm_size=14924 vm_rss=1408 vm_swap=0
+1525 15:39:15.599804725 0 curl (3475) > mmap addr=7FE729E4C000 length=5768 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1526 15:39:15.599812537 0 curl (3475) < mmap res=140630817030144 vm_size=14924 vm_rss=1408 vm_swap=0
+1527 15:39:15.599828962 0 curl (3475) > close fd=3(<f>/lib64/libselinux.so.1)
+1528 15:39:15.599830171 0 curl (3475) < close res=0
+1529 15:39:15.599837574 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libcrypt.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1530 15:39:15.599888639 0 curl (3475) < openat fd=3(<f>/lib64/libcrypt.so.2) dirfd=-100(AT_FDCWD) name=/lib64/libcrypt.so.2 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401614
+1531 15:39:15.599891793 0 curl (3475) > read fd=3(<f>/lib64/libcrypt.so.2) size=832
+1532 15:39:15.599895381 0 curl (3475) < read res=832 data=.ELF..............>.....P ......@.......(...........@.8...@.....................
+1533 15:39:15.599896946 0 curl (3475) > fstat fd=3(<f>/lib64/libcrypt.so.2)
+1534 15:39:15.599898889 0 curl (3475) < fstat res=0
+1535 15:39:15.599909955 0 curl (3475) > mmap addr=0 length=233728 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypt.so.2) offset=0
+1536 15:39:15.599925010 0 curl (3475) < mmap res=140630816616448 vm_size=15156 vm_rss=1408 vm_swap=0
+1537 15:39:15.599925892 0 curl (3475) > mprotect addr=7FE729DE9000 length=188416 prot=0(PROT_NONE)
+1538 15:39:15.599937098 0 curl (3475) < mprotect res=0
+1539 15:39:15.599937866 0 curl (3475) > mmap addr=7FE729DE9000 length=81920 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypt.so.2) offset=8192
+1540 15:39:15.599949569 0 curl (3475) < mmap res=140630816624640 vm_size=15156 vm_rss=1408 vm_swap=0
+1541 15:39:15.599950370 0 curl (3475) > mmap addr=7FE729DFD000 length=102400 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypt.so.2) offset=90112
+1542 15:39:15.599957885 0 curl (3475) < mmap res=140630816706560 vm_size=15156 vm_rss=1408 vm_swap=0
+1543 15:39:15.599958600 0 curl (3475) > mmap addr=7FE729E17000 length=4096 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libcrypt.so.2) offset=192512
+1544 15:39:15.599964241 0 curl (3475) < mmap res=140630816813056 vm_size=15156 vm_rss=1408 vm_swap=0
+1545 15:39:15.599964983 0 curl (3475) > mmap addr=7FE729E18000 length=33024 prot=3(PROT_READ|PROT_WRITE) flags=14(MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1546 15:39:15.599968833 0 curl (3475) < mmap res=140630816817152 vm_size=15156 vm_rss=1408 vm_swap=0
+1547 15:39:15.599993002 0 curl (3475) > close fd=3(<f>/lib64/libcrypt.so.2)
+1548 15:39:15.599994457 0 curl (3475) < close res=0
+1549 15:39:15.600009138 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/lib64/libpcre2-8.so.0 flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+1550 15:39:15.600022182 0 curl (3475) < openat fd=3(<f>/lib64/libpcre2-8.so.0) dirfd=-100(AT_FDCWD) name=/lib64/libpcre2-8.so.0 flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=402003
+1551 15:39:15.600023599 0 curl (3475) > read fd=3(<f>/lib64/libpcre2-8.so.0) size=832
+1552 15:39:15.600025984 0 curl (3475) < read res=832 data=.ELF..............>......$......@...................@.8...@.....................
+1553 15:39:15.600027134 0 curl (3475) > fstat fd=3(<f>/lib64/libpcre2-8.so.0)
+1554 15:39:15.600028609 0 curl (3475) < fstat res=0
+1555 15:39:15.600030138 0 curl (3475) > mmap addr=0 length=635440 prot=1(PROT_READ) flags=1026(MAP_PRIVATE|MAP_DENYWRITE) fd=3(<f>/lib64/libpcre2-8.so.0) offset=0
+1556 15:39:15.600037681 0 curl (3475) < mmap res=140630815977472 vm_size=15780 vm_rss=1408 vm_swap=0
+1557 15:39:15.600038441 0 curl (3475) > mmap addr=7FE729D4D000 length=446464 prot=5(PROT_READ|PROT_EXEC) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libpcre2-8.so.0) offset=8192
+1558 15:39:15.600052463 0 curl (3475) < mmap res=140630815985664 vm_size=15780 vm_rss=1408 vm_swap=0
+1559 15:39:15.600053221 0 curl (3475) > mmap addr=7FE729DBA000 length=176128 prot=1(PROT_READ) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libpcre2-8.so.0) offset=454656
+1560 15:39:15.600060397 0 curl (3475) < mmap res=140630816432128 vm_size=15780 vm_rss=1408 vm_swap=0
+1561 15:39:15.600061048 0 curl (3475) > mmap addr=7FE729DE5000 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=1030(MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE) fd=3(<f>/lib64/libpcre2-8.so.0) offset=626688
+1562 15:39:15.600067960 0 curl (3475) < mmap res=140630816608256 vm_size=15780 vm_rss=1408 vm_swap=0
+1563 15:39:15.600293063 0 curl (3475) > close fd=3(<f>/lib64/libpcre2-8.so.0)
+1564 15:39:15.600295050 0 curl (3475) < close res=0
+1565 15:39:15.600327444 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1566 15:39:15.600338967 0 curl (3475) < mmap res=140630815969280 vm_size=15788 vm_rss=1664 vm_swap=0
+1567 15:39:15.600402382 0 curl (3475) > mmap addr=0 length=8192 prot=3(PROT_READ|PROT_WRITE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+1568 15:39:15.600409366 0 curl (3475) < mmap res=140630815961088 vm_size=15796 vm_rss=1664 vm_swap=0
+1569 15:39:15.600423411 0 curl (3475) > arch_prctl 
+1570 15:39:15.600425068 0 curl (3475) < arch_prctl 
+1571 15:39:15.600425994 0 curl (3475) > set_tid_address 
+1572 15:39:15.600427693 0 curl (3475) < set_tid_address 
+1573 15:39:15.600428340 0 curl (3475) > set_robust_list 
+1574 15:39:15.600428735 0 curl (3475) < set_robust_list 
+1575 15:39:15.600429433 0 curl (3475) > rseq 
+1576 15:39:15.600430243 0 curl (3475) < rseq 
+1577 15:39:15.600905046 0 curl (3475) > switch next=30 pgft_maj=0 pgft_min=156 vm_size=15796 vm_rss=1664 vm_swap=0
+1580 15:39:15.601163599 0 curl (3475) > mprotect addr=7FE72A9F5000 length=16384 prot=1(PROT_READ)
+1581 15:39:15.601183903 0 curl (3475) < mprotect res=0
+1582 15:39:15.601222536 0 curl (3475) > mprotect addr=7FE729DE5000 length=4096 prot=1(PROT_READ)
+1583 15:39:15.601233352 0 curl (3475) < mprotect res=0
+1584 15:39:15.601247967 0 curl (3475) > mprotect addr=7FE729E17000 length=4096 prot=1(PROT_READ)
+1585 15:39:15.601253491 0 curl (3475) < mprotect res=0
+1586 15:39:15.601320545 0 curl (3475) > mprotect addr=7FE729E4A000 length=4096 prot=1(PROT_READ)
+1587 15:39:15.601330399 0 curl (3475) < mprotect res=0
+1588 15:39:15.601334973 0 curl (3475) > mprotect addr=7FE729E6F000 length=4096 prot=1(PROT_READ)
+1589 15:39:15.601339843 0 curl (3475) < mprotect res=0
+1590 15:39:15.601360726 0 curl (3475) > mprotect addr=7FE729F05000 length=4096 prot=1(PROT_READ)
+1591 15:39:15.601365192 0 curl (3475) < mprotect res=0
+1592 15:39:15.601381206 0 curl (3475) > mprotect addr=7FE72AB6E000 length=4096 prot=1(PROT_READ)
+1593 15:39:15.601385557 0 curl (3475) < mprotect res=0
+1594 15:39:15.602253135 0 curl (3475) > mprotect addr=7FE72A6B8000 length=372736 prot=1(PROT_READ)
+1595 15:39:15.602277293 0 curl (3475) < mprotect res=0
+1596 15:39:15.602310951 0 curl (3475) > mprotect addr=7FE729EFC000 length=4096 prot=1(PROT_READ)
+1597 15:39:15.602321194 0 curl (3475) < mprotect res=0
+1598 15:39:15.602398483 0 curl (3475) > mprotect addr=7FE729F16000 length=4096 prot=1(PROT_READ)
+1599 15:39:15.602409357 0 curl (3475) < mprotect res=0
+1600 15:39:15.602505620 0 curl (3475) > mprotect addr=7FE72AA27000 length=8192 prot=1(PROT_READ)
+1601 15:39:15.602511600 0 curl (3475) < mprotect res=0
+1602 15:39:15.602529029 0 curl (3475) > mprotect addr=7FE72AA0D000 length=4096 prot=1(PROT_READ)
+1603 15:39:15.602539148 0 curl (3475) < mprotect res=0
+1604 15:39:15.602938817 0 curl (3475) > mprotect addr=7FE72A1F0000 length=57344 prot=1(PROT_READ)
+1605 15:39:15.602958867 0 curl (3475) < mprotect res=0
+1606 15:39:15.603159250 0 curl (3475) > mprotect addr=7FE72AA7D000 length=8192 prot=1(PROT_READ)
+1607 15:39:15.603171182 0 curl (3475) < mprotect res=0
+1608 15:39:15.603276161 0 curl (3475) > mprotect addr=7FE729E91000 length=4096 prot=1(PROT_READ)
+1609 15:39:15.603288746 0 curl (3475) < mprotect res=0
+1610 15:39:15.603555302 0 curl (3475) > mprotect addr=7FE729EE9000 length=8192 prot=1(PROT_READ)
+1611 15:39:15.603567989 0 curl (3475) < mprotect res=0
+1612 15:39:15.603863373 0 curl (3475) > mprotect addr=7FE72A09A000 length=16384 prot=1(PROT_READ)
+1613 15:39:15.603928684 0 curl (3475) < mprotect res=0
+1614 15:39:15.603943864 0 curl (3475) > mprotect addr=7FE72A0AB000 length=4096 prot=1(PROT_READ)
+1615 15:39:15.603952902 0 curl (3475) < mprotect res=0
+1616 15:39:15.604001543 0 curl (3475) > mprotect addr=7FE72A0BD000 length=4096 prot=1(PROT_READ)
+1617 15:39:15.604016000 0 curl (3475) < mprotect res=0
+1618 15:39:15.604458306 0 curl (3475) > mprotect addr=7FE72A7F1000 length=45056 prot=1(PROT_READ)
+1619 15:39:15.604472688 0 curl (3475) < mprotect res=0
+1620 15:39:15.604800504 0 curl (3475) > mprotect addr=7FE72A121000 length=8192 prot=1(PROT_READ)
+1621 15:39:15.604812655 0 curl (3475) < mprotect res=0
+1622 15:39:15.604834248 0 curl (3475) > mprotect addr=7FE72AB2A000 length=4096 prot=1(PROT_READ)
+1623 15:39:15.604839690 0 curl (3475) < mprotect res=0
+1624 15:39:15.604855009 0 curl (3475) > mprotect addr=7FE72AA92000 length=4096 prot=1(PROT_READ)
+1625 15:39:15.604859621 0 curl (3475) < mprotect res=0
+1626 15:39:15.605046319 0 curl (3475) > mprotect addr=7FE72AB07000 length=8192 prot=1(PROT_READ)
+1627 15:39:15.605055734 0 curl (3475) < mprotect res=0
+1628 15:39:15.605089227 0 curl (3475) > mprotect addr=7FE72AB52000 length=12288 prot=1(PROT_READ)
+1629 15:39:15.605098814 0 curl (3475) < mprotect res=0
+1630 15:39:15.605339801 0 curl (3475) > mprotect addr=7FE72AC0B000 length=16384 prot=1(PROT_READ)
+1631 15:39:15.605347500 0 curl (3475) < mprotect res=0
+1632 15:39:15.605408247 0 curl (3475) > mprotect addr=558ADF1A3000 length=20480 prot=1(PROT_READ)
+1633 15:39:15.605416596 0 curl (3475) < mprotect res=0
+1634 15:39:15.605423799 0 curl (3475) > mprotect addr=7FE72AC4C000 length=8192 prot=1(PROT_READ)
+1635 15:39:15.605437719 0 curl (3475) < mprotect res=0
+1636 15:39:15.605460563 0 curl (3475) > prlimit pid=0 resource=3(RLIMIT_STACK)
+1637 15:39:15.605462723 0 curl (3475) < prlimit res=0 newcur=0 newmax=0 oldcur=8388608 oldmax=-1 pid=0 resource=3(RLIMIT_STACK)
+1638 15:39:15.605484235 0 curl (3475) > munmap addr=7FE72AC14000 length=14991
+1639 15:39:15.605498078 0 curl (3475) < munmap res=0 vm_size=15780 vm_rss=3328 vm_swap=0
+1640 15:39:15.605528568 0 curl (3475) > statfs 
+1641 15:39:15.605551077 0 curl (3475) < statfs 
+1642 15:39:15.605552161 0 curl (3475) > statfs 
+1643 15:39:15.605554477 0 curl (3475) < statfs 
+1644 15:39:15.605556453 0 curl (3475) > getrandom 
+1645 15:39:15.605559198 0 curl (3475) < getrandom 
+1646 15:39:15.605562510 0 curl (3475) > brk addr=0
+1647 15:39:15.605563296 0 curl (3475) < brk res=558AE05D7000 vm_size=15780 vm_rss=3712 vm_swap=0
+1648 15:39:15.605564118 0 curl (3475) > brk addr=558AE05F8000
+1649 15:39:15.605571786 0 curl (3475) < brk res=558AE05F8000 vm_size=15912 vm_rss=3712 vm_swap=0
+1650 15:39:15.605589711 0 curl (3475) > access mode=0(F_OK)
+1651 15:39:15.605601957 0 curl (3475) < access res=0 name=/etc/selinux/config
+1652 15:39:15.606306061 0 curl (3475) > switch next=3474(sysdig) pgft_maj=0 pgft_min=347 vm_size=15912 vm_rss=4224 vm_swap=0
+2290 15:39:15.623935967 0 curl (3475) > switch next=3247 pgft_maj=0 pgft_min=347 vm_size=15912 vm_rss=4224 vm_swap=0
+2293 15:39:15.625342862 0 curl (3475) > pipe 
+2294 15:39:15.625392988 0 curl (3475) < pipe res=0 fd1=3(<p>) fd2=4(<p>) ino=24837
+2295 15:39:15.625397835 0 curl (3475) > close fd=3(<p>)
+2296 15:39:15.625406777 0 curl (3475) < close res=0
+2297 15:39:15.625407751 0 curl (3475) > close fd=4(<p>)
+2298 15:39:15.625421240 0 curl (3475) < close res=0
+2299 15:39:15.625423083 0 curl (3475) > rt_sigaction 
+2300 15:39:15.625426963 0 curl (3475) < rt_sigaction 
+2301 15:39:15.625509265 0 curl (3475) > futex addr=7FE72A7162A4 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+2302 15:39:15.625514259 0 curl (3475) < futex res=0
+2303 15:39:15.628843002 0 curl (3475) > switch next=3453 pgft_maj=0 pgft_min=377 vm_size=15912 vm_rss=5504 vm_swap=0
+3314 15:39:15.654514582 0 curl (3475) > futex addr=7FE72A7162A0 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3315 15:39:15.654520520 0 curl (3475) < futex res=0
+3316 15:39:15.654525253 0 curl (3475) > futex addr=7FE72A71629C op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3317 15:39:15.654526102 0 curl (3475) < futex res=0
+3318 15:39:15.654568489 0 curl (3475) > futex addr=7FE72A7165E8 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3319 15:39:15.654569687 0 curl (3475) < futex res=0
+3320 15:39:15.654812997 0 curl (3475) > futex addr=7FE72A716294 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3321 15:39:15.654814506 0 curl (3475) < futex res=0
+3322 15:39:15.654871507 0 curl (3475) > futex addr=7FE72A716290 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3323 15:39:15.654872809 0 curl (3475) < futex res=0
+3324 15:39:15.654881236 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/proc/sys/crypto/fips_enabled flags=1(O_RDONLY) mode=0
+3325 15:39:15.654932694 0 curl (3475) < openat fd=3(<f>/proc/sys/crypto/fips_enabled) dirfd=-100(AT_FDCWD) name=/proc/sys/crypto/fips_enabled flags=1(O_RDONLY) mode=0 dev=13 ino=12741
+3326 15:39:15.654935986 0 curl (3475) > read fd=3(<f>/proc/sys/crypto/fips_enabled) size=2
+3327 15:39:15.654949485 0 curl (3475) < read res=2 data=0.
+3328 15:39:15.654951044 0 curl (3475) > close fd=3(<f>/proc/sys/crypto/fips_enabled)
+3329 15:39:15.654957833 0 curl (3475) < close res=0
+3330 15:39:15.655052414 0 curl (3475) > futex addr=7FE72A715C08 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3331 15:39:15.655054624 0 curl (3475) < futex res=0
+3332 15:39:15.655070101 0 curl (3475) > futex addr=7FE72A715F20 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3333 15:39:15.655071207 0 curl (3475) < futex res=0
+3334 15:39:15.655075287 0 curl (3475) > futex addr=7FE72A716180 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3335 15:39:15.655076224 0 curl (3475) < futex res=0
+3336 15:39:15.655078832 0 curl (3475) > futex addr=7FE72A715F30 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3337 15:39:15.655079485 0 curl (3475) < futex res=0
+3338 15:39:15.655572750 0 curl (3475) > futex addr=7FE72A716298 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3339 15:39:15.655573914 0 curl (3475) < futex res=0
+3340 15:39:15.655615539 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/etc/pki/tls/openssl.cnf flags=1(O_RDONLY) mode=0
+3341 15:39:15.655638365 0 curl (3475) < openat fd=3(<f>/etc/pki/tls/openssl.cnf) dirfd=-100(AT_FDCWD) name=/etc/pki/tls/openssl.cnf flags=1(O_RDONLY) mode=0 dev=FD00 ino=131278
+3342 15:39:15.655667767 0 curl (3475) > fstat fd=3(<f>/etc/pki/tls/openssl.cnf)
+3343 15:39:15.655672143 0 curl (3475) < fstat res=0
+3344 15:39:15.655681810 0 curl (3475) > read fd=3(<f>/etc/pki/tls/openssl.cnf) size=4096
+3345 15:39:15.655689227 0 curl (3475) < read res=4096 data=#.# OpenSSL example configuration file..# See doc/man5/config.pod for more info.
+3346 15:39:15.655745672 0 curl (3475) > newfstatat 
+3347 15:39:15.655754040 0 curl (3475) < newfstatat res=0 dirfd=-100(AT_FDCWD) path=/etc/pki/tls/openssl.d flags=0
+3348 15:39:15.655767049 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/etc/pki/tls/openssl.d flags=13377(O_DIRECTORY|O_NONBLOCK|O_RDONLY|O_CLOEXEC|O_TMPFILE) mode=0
+3349 15:39:15.655776218 0 curl (3475) < openat fd=4(<d>/etc/pki/tls/openssl.d) dirfd=-100(AT_FDCWD) name=/etc/pki/tls/openssl.d flags=13377(O_DIRECTORY|O_NONBLOCK|O_RDONLY|O_CLOEXEC|O_TMPFILE) mode=0 dev=FD00 ino=131279
+3350 15:39:15.655777988 0 curl (3475) > fstat fd=4(<d>/etc/pki/tls/openssl.d)
+3351 15:39:15.655779138 0 curl (3475) < fstat res=0
+3352 15:39:15.655789421 0 curl (3475) > getdents64 fd=4(<d>/etc/pki/tls/openssl.d)
+3353 15:39:15.655813870 0 curl (3475) < getdents64 res=48
+3354 15:39:15.655815683 0 curl (3475) > getdents64 fd=4(<d>/etc/pki/tls/openssl.d)
+3355 15:39:15.655816526 0 curl (3475) < getdents64 res=0
+3356 15:39:15.655817942 0 curl (3475) > close fd=4(<d>/etc/pki/tls/openssl.d)
+3357 15:39:15.655823610 0 curl (3475) < close res=0
+3358 15:39:15.655831792 0 curl (3475) > newfstatat 
+3359 15:39:15.655851647 0 curl (3475) < newfstatat res=0 dirfd=-100(AT_FDCWD) path=/etc/crypto-policies/back-ends/opensslcnf.config flags=0
+3360 15:39:15.655854252 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/etc/crypto-policies/back-ends/opensslcnf.config flags=1(O_RDONLY) mode=0
+3361 15:39:15.655861248 0 curl (3475) < openat fd=4(<f>/etc/crypto-policies/back-ends/opensslcnf.config) dirfd=-100(AT_FDCWD) name=/etc/crypto-policies/back-ends/opensslcnf.config flags=1(O_RDONLY) mode=0 dev=FD00 ino=401728
+3362 15:39:15.655865270 0 curl (3475) > fstat fd=4(<f>/etc/crypto-policies/back-ends/opensslcnf.config)
+3363 15:39:15.655866263 0 curl (3475) < fstat res=0
+3364 15:39:15.655866925 0 curl (3475) > read fd=4(<f>/etc/crypto-policies/back-ends/opensslcnf.config) size=4096
+3365 15:39:15.655868964 0 curl (3475) < read res=737 data=CipherString = @SECLEVEL=2:kEECDH:kRSA:kEDH:kPSK:kDHEPSK:kECDHEPSK:kRSAPSK:-aDSS
+3366 15:39:15.655896125 0 curl (3475) > read fd=4(<f>/etc/crypto-policies/back-ends/opensslcnf.config) size=4096
+3367 15:39:15.655899246 0 curl (3475) < read res=0 data=NULL
+3368 15:39:15.655903095 0 curl (3475) > close fd=4(<f>/etc/crypto-policies/back-ends/opensslcnf.config)
+3369 15:39:15.655905322 0 curl (3475) < close res=0
+3370 15:39:15.655938443 0 curl (3475) > read fd=3(<f>/etc/pki/tls/openssl.cnf) size=4096
+3371 15:39:15.655941241 0 curl (3475) < read res=4096 data=d look.# For type CA, the listed attributes must be the same, and the optional.#
+3372 15:39:15.656037171 0 curl (3475) > read fd=3(<f>/etc/pki/tls/openssl.cnf) size=4096
+3373 15:39:15.656041866 0 curl (3475) < read res=4096 data=mmendation.# subjectAltName=email:copy.# Copy issuer details.# issuerAltName=iss
+3374 15:39:15.656129993 0 curl (3475) > read fd=3(<f>/etc/pki/tls/openssl.cnf) size=4096
+3375 15:39:15.656133456 0 curl (3475) < read res=145 data=e update.cmd = kur.oldcert = $insta::certout # insta.cert.pem..[rr].# Certificat
+3376 15:39:15.656139735 0 curl (3475) > read fd=3(<f>/etc/pki/tls/openssl.cnf) size=4096
+3377 15:39:15.656140544 0 curl (3475) < read res=0 data=NULL
+3378 15:39:15.656142296 0 curl (3475) > close fd=3(<f>/etc/pki/tls/openssl.cnf)
+3379 15:39:15.656144230 0 curl (3475) < close res=0
+3380 15:39:15.656157451 0 curl (3475) > futex addr=7FE72A715DC8 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3381 15:39:15.656158834 0 curl (3475) < futex res=0
+3382 15:39:15.656165192 0 curl (3475) > futex addr=7FE72A715EF0 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3383 15:39:15.656165904 0 curl (3475) < futex res=0
+3384 15:39:15.656169282 0 curl (3475) > futex addr=7FE72A716280 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3385 15:39:15.656169929 0 curl (3475) < futex res=0
+3386 15:39:15.656171373 0 curl (3475) > futex addr=7FE72A71627C op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3387 15:39:15.656172019 0 curl (3475) < futex res=0
+3388 15:39:15.656175531 0 curl (3475) > futex addr=7FE72A715DE0 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3389 15:39:15.656176127 0 curl (3475) < futex res=0
+3390 15:39:15.656280123 0 curl (3475) > futex addr=7FE72A71628C op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3391 15:39:15.656281306 0 curl (3475) < futex res=0
+3392 15:39:15.656296910 0 curl (3475) > futex addr=7FE72A715DF0 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3393 15:39:15.656298000 0 curl (3475) < futex res=0
+3394 15:39:15.656301415 0 curl (3475) > futex addr=7FE72A7FFD58 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3395 15:39:15.656302071 0 curl (3475) < futex res=0
+3396 15:39:15.656307584 0 curl (3475) > sysinfo 
+3397 15:39:15.656316703 0 curl (3475) < sysinfo 
+3398 15:39:15.656370219 0 curl (3475) > futex addr=7FE72A7FFD78 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3399 15:39:15.656371625 0 curl (3475) < futex res=0
+3400 15:39:15.656520190 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/locale-archive flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3401 15:39:15.656534548 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/locale-archive flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3402 15:39:15.656540813 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/share/locale/locale.alias flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3403 15:39:15.656548992 0 curl (3475) < openat fd=3(<f>/usr/share/locale/locale.alias) dirfd=-100(AT_FDCWD) name=/usr/share/locale/locale.alias flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401267
+3404 15:39:15.656551503 0 curl (3475) > fstat fd=3(<f>/usr/share/locale/locale.alias)
+3405 15:39:15.656553305 0 curl (3475) < fstat res=0
+3406 15:39:15.656554125 0 curl (3475) > read fd=3(<f>/usr/share/locale/locale.alias) size=4096
+3407 15:39:15.656557822 0 curl (3475) < read res=2998 data=# Locale name alias data base..# Copyright (C) 1996-2021 Free Software Foundatio
+3408 15:39:15.656575492 0 curl (3475) > read fd=3(<f>/usr/share/locale/locale.alias) size=4096
+3409 15:39:15.656576234 0 curl (3475) < read res=0 data=NULL
+3410 15:39:15.656577218 0 curl (3475) > close fd=3(<f>/usr/share/locale/locale.alias)
+3411 15:39:15.656578655 0 curl (3475) < close res=0
+3412 15:39:15.656602538 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_IDENTIFICATION flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3413 15:39:15.656607034 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_IDENTIFICATION flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3414 15:39:15.656609117 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_IDENTIFICATION flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3415 15:39:15.656615599 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_IDENTIFICATION) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_IDENTIFICATION flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=400994
+3416 15:39:15.656617070 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_IDENTIFICATION)
+3417 15:39:15.656618289 0 curl (3475) < fstat res=0
+3418 15:39:15.656619206 0 curl (3475) > mmap addr=0 length=373 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_IDENTIFICATION) offset=0
+3419 15:39:15.656648169 0 curl (3475) < mmap res=140630831493120 vm_size=15916 vm_rss=7936 vm_swap=0
+3420 15:39:15.656649455 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_IDENTIFICATION)
+3421 15:39:15.656650048 0 curl (3475) < close res=0
+3422 15:39:15.656661124 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib64/gconv/gconv-modules.cache flags=1(O_RDONLY) mode=0
+3423 15:39:15.656674690 0 curl (3475) < openat fd=3(<f>/usr/lib64/gconv/gconv-modules.cache) dirfd=-100(AT_FDCWD) name=/usr/lib64/gconv/gconv-modules.cache flags=1(O_RDONLY) mode=0 dev=FD00 ino=401351
+3424 15:39:15.656676324 0 curl (3475) > fstat fd=3(<f>/usr/lib64/gconv/gconv-modules.cache)
+3425 15:39:15.656677780 0 curl (3475) < fstat res=0
+3426 15:39:15.656678378 0 curl (3475) > mmap addr=0 length=26988 prot=1(PROT_READ) flags=1(MAP_SHARED) fd=3(<f>/usr/lib64/gconv/gconv-modules.cache) offset=0
+3427 15:39:15.656688707 0 curl (3475) < mmap res=140630815932416 vm_size=15944 vm_rss=7936 vm_swap=0
+3428 15:39:15.656689379 0 curl (3475) > close fd=3(<f>/usr/lib64/gconv/gconv-modules.cache)
+3429 15:39:15.656690089 0 curl (3475) < close res=0
+3430 15:39:15.656697413 0 curl (3475) > futex addr=7FE72A9FAA6C op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+3431 15:39:15.656698736 0 curl (3475) < futex res=0
+3432 15:39:15.656712709 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_MEASUREMENT flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3433 15:39:15.656719978 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_MEASUREMENT flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3434 15:39:15.656722966 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MEASUREMENT flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3435 15:39:15.656729263 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MEASUREMENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MEASUREMENT flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401183
+3436 15:39:15.656730754 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MEASUREMENT)
+3437 15:39:15.656732034 0 curl (3475) < fstat res=0
+3438 15:39:15.656732589 0 curl (3475) > mmap addr=0 length=23 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MEASUREMENT) offset=0
+3439 15:39:15.656739170 0 curl (3475) < mmap res=140630831489024 vm_size=15948 vm_rss=7936 vm_swap=0
+3440 15:39:15.656739840 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MEASUREMENT)
+3441 15:39:15.656740536 0 curl (3475) < close res=0
+3442 15:39:15.656757614 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_TELEPHONE flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3443 15:39:15.656763987 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_TELEPHONE flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3444 15:39:15.656766202 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_TELEPHONE flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3445 15:39:15.656771753 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TELEPHONE) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_TELEPHONE flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=400997
+3446 15:39:15.656773099 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TELEPHONE)
+3447 15:39:15.656774381 0 curl (3475) < fstat res=0
+3448 15:39:15.656774913 0 curl (3475) > mmap addr=0 length=56 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TELEPHONE) offset=0
+3449 15:39:15.656781174 0 curl (3475) < mmap res=140630831484928 vm_size=15952 vm_rss=7936 vm_swap=0
+3450 15:39:15.656781830 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TELEPHONE)
+3451 15:39:15.656782569 0 curl (3475) < close res=0
+3452 15:39:15.656798172 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_ADDRESS flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3453 15:39:15.656804683 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_ADDRESS flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3454 15:39:15.656806874 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_ADDRESS flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3455 15:39:15.656812093 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_ADDRESS) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_ADDRESS flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=400992
+3456 15:39:15.656813484 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_ADDRESS)
+3457 15:39:15.656814835 0 curl (3475) < fstat res=0
+3458 15:39:15.656815353 0 curl (3475) > mmap addr=0 length=158 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_ADDRESS) offset=0
+3459 15:39:15.656821024 0 curl (3475) < mmap res=140630831480832 vm_size=15956 vm_rss=7936 vm_swap=0
+3460 15:39:15.656821684 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_ADDRESS)
+3461 15:39:15.656822327 0 curl (3475) < close res=0
+3462 15:39:15.656837491 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_NAME flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3463 15:39:15.656843883 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_NAME flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3464 15:39:15.656845982 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_NAME flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3465 15:39:15.656852665 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NAME) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_NAME flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401185
+3466 15:39:15.656854473 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NAME)
+3467 15:39:15.656855826 0 curl (3475) < fstat res=0
+3468 15:39:15.656856321 0 curl (3475) > mmap addr=0 length=77 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NAME) offset=0
+3469 15:39:15.656861810 0 curl (3475) < mmap res=140630826258432 vm_size=15960 vm_rss=7936 vm_swap=0
+3470 15:39:15.656862428 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NAME)
+3471 15:39:15.656863132 0 curl (3475) < close res=0
+3472 15:39:15.656878351 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_PAPER flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3473 15:39:15.656885150 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_PAPER flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3474 15:39:15.656887524 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_PAPER flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3475 15:39:15.656892686 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_PAPER) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_PAPER flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401187
+3476 15:39:15.656893971 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_PAPER)
+3477 15:39:15.656895327 0 curl (3475) < fstat res=0
+3478 15:39:15.656895821 0 curl (3475) > mmap addr=0 length=34 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_PAPER) offset=0
+3479 15:39:15.656902182 0 curl (3475) < mmap res=140630815928320 vm_size=15964 vm_rss=7936 vm_swap=0
+3480 15:39:15.656902861 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_PAPER)
+3481 15:39:15.656903572 0 curl (3475) < close res=0
+3482 15:39:15.656919041 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_MESSAGES flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3483 15:39:15.656925305 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_MESSAGES flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3484 15:39:15.656927335 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MESSAGES flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3485 15:39:15.656933451 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MESSAGES flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=400995
+3486 15:39:15.656934839 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES)
+3487 15:39:15.656936071 0 curl (3475) < fstat res=0
+3488 15:39:15.656936636 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES)
+3489 15:39:15.656938204 0 curl (3475) < close res=0
+3490 15:39:15.656938942 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3491 15:39:15.656944494 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401184
+3492 15:39:15.656945997 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES)
+3493 15:39:15.656947087 0 curl (3475) < fstat res=0
+3494 15:39:15.656947607 0 curl (3475) > mmap addr=0 length=57 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES) offset=0
+3495 15:39:15.656953958 0 curl (3475) < mmap res=140630815924224 vm_size=15968 vm_rss=7936 vm_swap=0
+3496 15:39:15.656954562 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MESSAGES/SYS_LC_MESSAGES)
+3497 15:39:15.656955029 0 curl (3475) < close res=0
+3498 15:39:15.656969809 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_MONETARY flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3499 15:39:15.656976363 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_MONETARY flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3500 15:39:15.656978427 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MONETARY flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3501 15:39:15.656983822 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MONETARY) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_MONETARY flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=400996
+3502 15:39:15.656985139 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MONETARY)
+3503 15:39:15.656986480 0 curl (3475) < fstat res=0
+3504 15:39:15.656987071 0 curl (3475) > mmap addr=0 length=290 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MONETARY) offset=0
+3505 15:39:15.656992860 0 curl (3475) < mmap res=140630815920128 vm_size=15972 vm_rss=7936 vm_swap=0
+3506 15:39:15.656993539 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_MONETARY)
+3507 15:39:15.656994214 0 curl (3475) < close res=0
+3508 15:39:15.657090136 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_COLLATE flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3509 15:39:15.657101332 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_COLLATE flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3510 15:39:15.657104621 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_COLLATE flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3511 15:39:15.657113325 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_COLLATE) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_COLLATE flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401182
+3512 15:39:15.657115044 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_COLLATE)
+3513 15:39:15.657116763 0 curl (3475) < fstat res=0
+3514 15:39:15.657117444 0 curl (3475) > mmap addr=0 length=2586930 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_COLLATE) offset=0
+3515 15:39:15.657129237 0 curl (3475) < mmap res=140630812524544 vm_size=18500 vm_rss=7936 vm_swap=0
+3516 15:39:15.657130096 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_COLLATE)
+3517 15:39:15.657130972 0 curl (3475) < close res=0
+3518 15:39:15.657169543 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_TIME flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3519 15:39:15.657176854 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_TIME flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3520 15:39:15.657179282 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_TIME flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3521 15:39:15.657186224 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TIME) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_TIME flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401210
+3522 15:39:15.657187679 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TIME)
+3523 15:39:15.657189252 0 curl (3475) < fstat res=0
+3524 15:39:15.657189842 0 curl (3475) > mmap addr=0 length=3332 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TIME) offset=0
+3525 15:39:15.657204613 0 curl (3475) < mmap res=140630815916032 vm_size=18504 vm_rss=8192 vm_swap=0
+3526 15:39:15.657205384 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_TIME)
+3527 15:39:15.657206202 0 curl (3475) < close res=0
+3528 15:39:15.657223025 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_NUMERIC flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3529 15:39:15.657229941 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_NUMERIC flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3530 15:39:15.657232229 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_NUMERIC flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3531 15:39:15.657238019 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NUMERIC) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_NUMERIC flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401186
+3532 15:39:15.657239474 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NUMERIC)
+3533 15:39:15.657240872 0 curl (3475) < fstat res=0
+3534 15:39:15.657241457 0 curl (3475) > mmap addr=0 length=54 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NUMERIC) offset=0
+3535 15:39:15.657250695 0 curl (3475) < mmap res=140630815911936 vm_size=18508 vm_rss=8192 vm_swap=0
+3536 15:39:15.657251414 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_NUMERIC)
+3537 15:39:15.657252053 0 curl (3475) < close res=0
+3538 15:39:15.657267173 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_CTYPE flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3539 15:39:15.657274910 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.UTF-8/LC_CTYPE flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+3540 15:39:15.657277181 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_CTYPE flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+3541 15:39:15.657287025 0 curl (3475) < openat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_CTYPE) dirfd=-100(AT_FDCWD) name=/usr/lib/locale/en_GB.utf8/LC_CTYPE flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=401252
+3542 15:39:15.657288818 0 curl (3475) > fstat fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_CTYPE)
+3543 15:39:15.657290176 0 curl (3475) < fstat res=0
+3544 15:39:15.657290755 0 curl (3475) > mmap addr=0 length=346132 prot=1(PROT_READ) flags=2(MAP_PRIVATE) fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_CTYPE) offset=0
+3545 15:39:15.657306156 0 curl (3475) < mmap res=140630815563776 vm_size=18848 vm_rss=8192 vm_swap=0
+3546 15:39:15.657306990 0 curl (3475) > close fd=3(<f>/usr/lib/locale/en_GB.utf8/LC_CTYPE)
+3547 15:39:15.657307707 0 curl (3475) < close res=0
+3548 15:39:15.657351074 0 curl (3475) > openat dirfd=-100(AT_FDCWD) name=/home/dums/.curlrc flags=1(O_RDONLY) mode=0
+3549 15:39:15.657364107 0 curl (3475) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/home/dums/.curlrc flags=1(O_RDONLY) mode=0 dev=0 ino=0
+3550 15:39:15.657420448 0 curl (3475) > rt_sigaction 
+3551 15:39:15.657423542 0 curl (3475) < rt_sigaction 
+3552 15:39:15.657424257 0 curl (3475) > rt_sigaction 
+3553 15:39:15.657425847 0 curl (3475) < rt_sigaction 
+3554 15:39:15.657435598 0 curl (3475) > rt_sigaction 
+3555 15:39:15.657435948 0 curl (3475) < rt_sigaction 
+3556 15:39:15.657441253 0 curl (3475) > brk addr=558AE0619000
+3557 15:39:15.657449743 0 curl (3475) < brk res=558AE0619000 vm_size=18980 vm_rss=8320 vm_swap=0
+3558 15:39:15.657466025 0 curl (3475) > ioctl fd=1(<f>/dev/pts/1) request=5401 argument=7FFC4DCA7060
+3559 15:39:15.657479630 0 curl (3475) < ioctl res=0
+3560 15:39:15.657518394 0 curl (3475) > ioctl fd=0(<f>/dev/pts/1) request=5413 argument=7FFC4DCA7180
+3561 15:39:15.657520175 0 curl (3475) < ioctl res=0
+3562 15:39:15.657558342 0 curl (3475) > socket domain=10(AF_INET6) type=2 proto=0
+3563 15:39:15.657628542 0 curl (3475) < socket fd=3(<6>)
+3564 15:39:15.657630385 0 curl (3475) > close fd=3(<6>)
+3565 15:39:15.657655562 0 curl (3475) < close res=0
+3566 15:39:15.657656635 0 curl (3475) > socketpair domain=1(AF_LOCAL|AF_UNIX) type=1 proto=0
+3567 15:39:15.657683754 0 curl (3475) < socketpair res=0 fd1=3(<u>) fd2=4(<u>) source=FFFF9667C60F5400 peer=FFFF9667C60F5900
+3568 15:39:15.657687064 0 curl (3475) > fcntl fd=3(<u>) cmd=4(F_GETFL)
+3569 15:39:15.657690507 0 curl (3475) < fcntl res=2(<f>/dev/pts/1) fd=3(<u>) cmd=4(F_GETFL)
+3570 15:39:15.657691566 0 curl (3475) > fcntl fd=3(<u>) cmd=5(F_SETFL)
+3571 15:39:15.657692195 0 curl (3475) < fcntl res=0(<f>/dev/pts/1) fd=3(<u>) cmd=5(F_SETFL)
+3572 15:39:15.657692768 0 curl (3475) > fcntl fd=4(<u>) cmd=4(F_GETFL)
+3573 15:39:15.657693181 0 curl (3475) < fcntl res=2(<f>/dev/pts/1) fd=4(<u>) cmd=4(F_GETFL)
+3574 15:39:15.657693717 0 curl (3475) > fcntl fd=4(<u>) cmd=5(F_SETFL)
+3575 15:39:15.657694089 0 curl (3475) < fcntl res=0(<f>/dev/pts/1) fd=4(<u>) cmd=5(F_SETFL)
+3576 15:39:15.657698234 0 curl (3475) > rt_sigaction 
+3577 15:39:15.657698962 0 curl (3475) < rt_sigaction 
+3578 15:39:15.657699554 0 curl (3475) > rt_sigaction 
+3579 15:39:15.657700033 0 curl (3475) < rt_sigaction 
+3580 15:39:15.657703937 0 curl (3475) > poll fds=3:u1 timeout=0
+3581 15:39:15.657709691 0 curl (3475) < poll res=0 fds=3:u0
+3582 15:39:15.657711524 0 curl (3475) > rt_sigaction 
+3583 15:39:15.657711880 0 curl (3475) < rt_sigaction 
+3584 15:39:15.657712370 0 curl (3475) > rt_sigaction 
+3585 15:39:15.657712666 0 curl (3475) < rt_sigaction 
+3586 15:39:15.657798045 0 curl (3475) > socketpair domain=1(AF_LOCAL|AF_UNIX) type=1 proto=0
+3587 15:39:15.657820072 0 curl (3475) < socketpair res=0 fd1=5(<u>) fd2=6(<u>) source=FFFF9667C60F7700 peer=FFFF9667C80B0A00
+3588 15:39:15.657823787 0 curl (3475) > rt_sigaction 
+3589 15:39:15.657824880 0 curl (3475) < rt_sigaction 
+3590 15:39:15.657825377 0 curl (3475) > rt_sigprocmask 
+3591 15:39:15.657825983 0 curl (3475) < rt_sigprocmask 
+3592 15:39:15.657828105 0 curl (3475) > mmap addr=0 length=8392704 prot=0(PROT_NONE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+3593 15:39:15.657836225 0 curl (3475) < mmap res=140630804131840 vm_size=27176 vm_rss=8576 vm_swap=0
+3594 15:39:15.657837080 0 curl (3475) > mprotect addr=7FE729200000 length=8388608 prot=3(PROT_READ|PROT_WRITE)
+3595 15:39:15.657846884 0 curl (3475) < mprotect res=0
+3596 15:39:15.658281840 0 curl (3475) > rt_sigprocmask 
+3597 15:39:15.658286374 0 curl (3475) < rt_sigprocmask 
+3598 15:39:15.658288548 0 curl (3475) > clone3 
+3599 15:39:15.658386329 0 curl (3475) < clone3 res=3476(curl) exe=curl args=example.org. tid=3475(curl) pid=3475(curl) ptid=3338(bash) cwd=<NA> fdlimit=1024 pgft_maj=0 pgft_min=477 vm_size=27176 vm_rss=10740 vm_swap=0 comm=curl cgroups=cpuset=/.cpu=/.cpuacct=/.io=/.memory=/user.slice/user-1000.slice/session-4.sc... flags=41990659(CLONE_FILES|CLONE_FS|CLONE_PARENT_SETTID|CLONE_SIGHAND|CLONE_SYSVSEM|CLONE_THREAD|CLONE_VM|CLONE_CHILD_CLEARTID|CLONE_SETTLS) uid=1000 gid=1000 vtid=3475(curl) vpid=3475(curl) pidns_init_start_ts=0
+3600 15:39:15.658405840 0 curl (3475) > rt_sigprocmask 
+3601 15:39:15.658406448 0 curl (3475) < rt_sigprocmask 
+3602 15:39:15.658414356 0 curl (3475) > rt_sigaction 
+3603 15:39:15.658414970 0 curl (3475) < rt_sigaction 
+3604 15:39:15.658419144 0 curl (3475) > poll fds=5:u1 3:u1 timeout=1
+3605 15:39:15.658435326 0 curl (3475) > switch next=3474(sysdig) pgft_maj=0 pgft_min=477 vm_size=27176 vm_rss=10740 vm_swap=0
+4704 15:39:15.671488888 0 curl (3475) < poll res=0 fds=5:u0 3:u0
+4705 15:39:15.671509030 0 curl (3475) > rt_sigaction 
+4706 15:39:15.671511860 0 curl (3475) < rt_sigaction 
+4707 15:39:15.671512594 0 curl (3475) > rt_sigaction 
+4708 15:39:15.671514218 0 curl (3475) < rt_sigaction 
+4709 15:39:15.671553267 0 curl (3475) > rt_sigaction 
+4710 15:39:15.671554689 0 curl (3475) < rt_sigaction 
+4711 15:39:15.671557322 0 curl (3475) > poll fds=5:u1 3:u1 timeout=1
+4712 15:39:15.671565814 0 curl (3475) > switch next=3476(curl) pgft_maj=0 pgft_min=478 vm_size=27176 vm_rss=10740 vm_swap=0
+4713 15:39:15.671571558 0 curl (3476) < clone3 res=0 exe=curl args=example.org. tid=3476(curl) pid=3475(curl) ptid=3338(bash) cwd=<NA> fdlimit=1024 pgft_maj=0 pgft_min=0 vm_size=27176 vm_rss=10740 vm_swap=0 comm=curl cgroups=cpuset=/.cpu=/.cpuacct=/.io=/.memory=/user.slice/user-1000.slice/session-4.sc... flags=41990659(CLONE_FILES|CLONE_FS|CLONE_PARENT_SETTID|CLONE_SIGHAND|CLONE_SYSVSEM|CLONE_THREAD|CLONE_VM|CLONE_CHILD_CLEARTID|CLONE_SETTLS) uid=1000 gid=1000 vtid=3476(curl) vpid=3475(curl) pidns_init_start_ts=60499634
+4714 15:39:15.671591142 0 curl (3476) > rseq 
+4715 15:39:15.671592318 0 curl (3476) < rseq 
+4716 15:39:15.671593041 0 curl (3476) > set_robust_list 
+4717 15:39:15.671593903 0 curl (3476) < set_robust_list 
+4718 15:39:15.671595064 0 curl (3476) > rt_sigprocmask 
+4719 15:39:15.671595921 0 curl (3476) < rt_sigprocmask 
+4720 15:39:15.671598329 0 curl (3476) > mmap addr=0 length=134217728 prot=0(PROT_NONE) flags=10(MAP_PRIVATE|MAP_ANONYMOUS) fd=-1(EPERM) offset=0
+4721 15:39:15.671616172 0 curl (3476) < mmap res=140630669914112 vm_size=158248 vm_rss=10740 vm_swap=0
+4722 15:39:15.671617674 0 curl (3476) > munmap addr=7FE7211FF000 length=48238592
+4723 15:39:15.671640956 0 curl (3476) < munmap res=0 vm_size=111140 vm_rss=10740 vm_swap=0
+4724 15:39:15.671642676 0 curl (3476) > munmap addr=7FE728000000 length=18870272
+4725 15:39:15.671650421 0 curl (3476) < munmap res=0 vm_size=92712 vm_rss=10740 vm_swap=0
+4726 15:39:15.671651045 0 curl (3476) > mprotect addr=7FE724000000 length=135168 prot=3(PROT_READ|PROT_WRITE)
+4727 15:39:15.671657766 0 curl (3476) < mprotect res=0
+4728 15:39:15.671696128 0 curl (3476) > socket domain=1(AF_LOCAL|AF_UNIX) type=526337 proto=0
+4729 15:39:15.671745071 0 curl (3476) < socket fd=7(<u>)
+4730 15:39:15.671747121 0 curl (3476) > connect fd=7(<u>/var/run/nscd/socket) addr=/var/run/nscd/socket
+4731 15:39:15.671792410 0 curl (3476) < connect res=-2(ENOENT) tuple=0->ffff9667c80b0000 /var/run/nscd/socket fd=7(<u>/var/run/nscd/socket)
+4732 15:39:15.671795049 0 curl (3476) > close fd=7(<u>/var/run/nscd/socket)
+4733 15:39:15.671803904 0 curl (3476) < close res=0
+4734 15:39:15.671805898 0 curl (3476) > socket domain=1(AF_LOCAL|AF_UNIX) type=526337 proto=0
+4735 15:39:15.671814468 0 curl (3476) < socket fd=7(<u>)
+4736 15:39:15.671815287 0 curl (3476) > connect fd=7(<u>/var/run/nscd/socket) addr=/var/run/nscd/socket
+4737 15:39:15.671823082 0 curl (3476) < connect res=-2(ENOENT) tuple=0->ffff9667c80b0000 /var/run/nscd/socket fd=7(<u>/var/run/nscd/socket)
+4738 15:39:15.671824391 0 curl (3476) > close fd=7(<u>/var/run/nscd/socket)
+4739 15:39:15.671827522 0 curl (3476) < close res=0
+4740 15:39:15.671842738 0 curl (3476) > newfstatat 
+4741 15:39:15.671854050 0 curl (3476) < newfstatat res=0 dirfd=-100(AT_FDCWD) path=/etc/nsswitch.conf flags=0
+4742 15:39:15.671856341 0 curl (3476) > newfstatat 
+4743 15:39:15.671858438 0 curl (3476) < newfstatat res=0 dirfd=-100(AT_FDCWD) path=/ flags=0
+4744 15:39:15.671861500 0 curl (3476) > openat dirfd=-100(AT_FDCWD) name=/etc/nsswitch.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+4745 15:39:15.671869911 0 curl (3476) < openat fd=7(<f>/etc/nsswitch.conf) dirfd=-100(AT_FDCWD) name=/etc/nsswitch.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=131762
+4746 15:39:15.671875230 0 curl (3476) > fstat fd=7(<f>/etc/nsswitch.conf)
+4747 15:39:15.671876662 0 curl (3476) < fstat res=0
+4748 15:39:15.671886634 0 curl (3476) > read fd=7(<f>/etc/nsswitch.conf) size=4096
+4749 15:39:15.671893175 0 curl (3476) < read res=2124 data=#.# /etc/nsswitch.conf.#.# Name Service Switch config file. This file should be.
+4750 15:39:15.671927203 0 curl (3476) > read fd=7(<f>/etc/nsswitch.conf) size=4096
+4751 15:39:15.671930032 0 curl (3476) < read res=0 data=NULL
+4752 15:39:15.671932453 0 curl (3476) > fstat fd=7(<f>/etc/nsswitch.conf)
+4753 15:39:15.671933979 0 curl (3476) < fstat res=0
+4754 15:39:15.671935153 0 curl (3476) > close fd=7(<f>/etc/nsswitch.conf)
+4755 15:39:15.671937482 0 curl (3476) < close res=0
+4756 15:39:15.671942200 0 curl (3476) > newfstatat 
+4757 15:39:15.671948263 0 curl (3476) < newfstatat res=0 dirfd=-100(AT_FDCWD) path=/etc/resolv.conf flags=0
+4758 15:39:15.671965091 0 curl (3476) > openat dirfd=-100(AT_FDCWD) name=/etc/host.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+4759 15:39:15.671975603 0 curl (3476) < openat fd=7(<f>/etc/host.conf) dirfd=-100(AT_FDCWD) name=/etc/host.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=131123
+4760 15:39:15.671977984 0 curl (3476) > fstat fd=7(<f>/etc/host.conf)
+4761 15:39:15.671979465 0 curl (3476) < fstat res=0
+4762 15:39:15.671988342 0 curl (3476) > read fd=7(<f>/etc/host.conf) size=4096
+4763 15:39:15.671992065 0 curl (3476) < read res=9 data=multi on.
+4764 15:39:15.671995513 0 curl (3476) > read fd=7(<f>/etc/host.conf) size=4096
+4765 15:39:15.671996150 0 curl (3476) < read res=0 data=NULL
+4766 15:39:15.671996948 0 curl (3476) > close fd=7(<f>/etc/host.conf)
+4767 15:39:15.671998614 0 curl (3476) < close res=0
+4768 15:39:15.672001164 0 curl (3476) > futex addr=7FE72AA0248C op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+4769 15:39:15.672004159 0 curl (3476) < futex res=0
+4770 15:39:15.672005235 0 curl (3476) > openat dirfd=-100(AT_FDCWD) name=/etc/resolv.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+4771 15:39:15.672010910 0 curl (3476) < openat fd=7(<f>/etc/resolv.conf) dirfd=-100(AT_FDCWD) name=/etc/resolv.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=132194
+4772 15:39:15.672013646 0 curl (3476) > fstat fd=7(<f>/etc/resolv.conf)
+4773 15:39:15.672014821 0 curl (3476) < fstat res=0
+4774 15:39:15.672015544 0 curl (3476) > read fd=7(<f>/etc/resolv.conf) size=4096
+4775 15:39:15.672017577 0 curl (3476) < read res=103 data=# Generated by NetworkManager.search etudiants.campus.villejuif.nameserver 10.0.
+4776 15:39:15.672023687 0 curl (3476) > read fd=7(<f>/etc/resolv.conf) size=4096
+4777 15:39:15.672024449 0 curl (3476) < read res=0 data=NULL
+4778 15:39:15.672025281 0 curl (3476) > fstat fd=7(<f>/etc/resolv.conf)
+4779 15:39:15.672026049 0 curl (3476) < fstat res=0
+4780 15:39:15.672028250 0 curl (3476) > close fd=7(<f>/etc/resolv.conf)
+4781 15:39:15.672029216 0 curl (3476) < close res=0
+4782 15:39:15.672037496 0 curl (3476) > openat dirfd=-100(AT_FDCWD) name=/etc/hosts flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+4783 15:39:15.672042914 0 curl (3476) < openat fd=7(<f>/etc/hosts) dirfd=-100(AT_FDCWD) name=/etc/hosts flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=FD00 ino=131124
+4784 15:39:15.672045741 0 curl (3476) > fstat fd=7(<f>/etc/hosts)
+4785 15:39:15.672046832 0 curl (3476) < fstat res=0
+4786 15:39:15.672048210 0 curl (3476) > lseek fd=7(<f>/etc/hosts) offset=0 whence=0(SEEK_SET)
+4787 15:39:15.672050108 0 curl (3476) < lseek res=0
+4788 15:39:15.672051905 0 curl (3476) > read fd=7(<f>/etc/hosts) size=4096
+4789 15:39:15.672053651 0 curl (3476) < read res=158 data=127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4.:
+4790 15:39:15.672058471 0 curl (3476) > read fd=7(<f>/etc/hosts) size=4096
+4791 15:39:15.672059117 0 curl (3476) < read res=0 data=NULL
+4792 15:39:15.672059867 0 curl (3476) > close fd=7(<f>/etc/hosts)
+4793 15:39:15.672060771 0 curl (3476) < close res=0
+4794 15:39:15.672072216 0 curl (3476) > socket domain=2(AF_INET) type=526338 proto=0
+4795 15:39:15.672094773 0 curl (3476) < socket fd=7(<4>)
+4796 15:39:15.672096156 0 curl (3476) > setsockopt 
+4797 15:39:15.672104411 0 curl (3476) < setsockopt res=0 fd=7(<4>) level=0(UNKNOWN) optname=0(UNKNOWN) val=.... optlen=4
+4798 15:39:15.672106764 0 curl (3476) > connect fd=7(<4>) addr=10.0.2.3:53
+4799 15:39:15.672128997 0 curl (3476) < connect res=0 tuple=10.0.2.15:57045->10.0.2.3:53 fd=7(<4u>10.0.2.15:57045->10.0.2.3:53)
+4800 15:39:15.672130906 0 curl (3476) > poll fds=7:44 timeout=0
+4801 15:39:15.672133483 0 curl (3476) < poll res=1 fds=7:44
+4802 15:39:15.672135329 0 curl (3476) > sendmmsg 
+4803 15:39:15.674622780 0 curl (3476) > switch next=17 pgft_maj=0 pgft_min=7 vm_size=92712 vm_rss=10740 vm_swap=0
+4807 15:39:15.674656482 0 curl (3475) < poll res=0 fds=5:u0 3:u0
+4808 15:39:15.674666947 0 curl (3475) > rt_sigaction 
+4809 15:39:15.674668604 0 curl (3475) < rt_sigaction 
+4810 15:39:15.674669344 0 curl (3475) > rt_sigaction 
+4811 15:39:15.674670057 0 curl (3475) < rt_sigaction 
+4812 15:39:15.674678509 0 curl (3475) > rt_sigaction 
+4813 15:39:15.674678871 0 curl (3475) < rt_sigaction 
+4814 15:39:15.674680793 0 curl (3475) > poll fds=5:u1 3:u1 timeout=3
+4815 15:39:15.674685901 0 curl (3475) > switch next=3476(curl) pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=10740 vm_swap=0
+4816 15:39:15.676446532 0 curl (3476) < sendmmsg 
+4817 15:39:15.676452843 0 curl (3476) > poll fds=7:41 timeout=5000
+4818 15:39:15.676465438 0 curl (3476) > switch next=3453 pgft_maj=0 pgft_min=7 vm_size=92712 vm_rss=10740 vm_swap=0
+6093 15:39:15.684511962 0 curl (3475) < poll res=0 fds=5:u0 3:u0
+6094 15:39:15.684521535 0 curl (3475) > rt_sigaction 
+6095 15:39:15.684523091 0 curl (3475) < rt_sigaction 
+6096 15:39:15.684523792 0 curl (3475) > rt_sigaction 
+6097 15:39:15.684524784 0 curl (3475) < rt_sigaction 
+6098 15:39:15.684533387 0 curl (3475) > rt_sigaction 
+6099 15:39:15.684533759 0 curl (3475) < rt_sigaction 
+6100 15:39:15.684535871 0 curl (3475) > poll fds=5:u1 3:u1 timeout=7
+6101 15:39:15.684542590 0 curl (3475) > switch next=3474(sysdig) pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=10740 vm_swap=0
+6146 15:39:15.687642415 0 curl (3476) < poll res=1 fds=7:41
+6147 15:39:15.687646829 0 curl (3476) > ioctl fd=7(<4u>10.0.2.15:57045->10.0.2.3:53) request=541B argument=7FE7299FD1FC
+6148 15:39:15.687650646 0 curl (3476) < ioctl res=0
+6149 15:39:15.687651533 0 curl (3476) > recvfrom fd=7(<4u>10.0.2.15:57045->10.0.2.3:53) size=2048
+6150 15:39:15.687656814 0 curl (3476) < recvfrom res=141 data=5............example.org..............s..&......6.....6./.........s..&......6... tuple=10.0.2.3:53->10.0.2.15:57045
+6151 15:39:15.687662042 0 curl (3476) > poll fds=7:41 timeout=4984
+6152 15:39:15.687663436 0 curl (3476) < poll res=1 fds=7:41
+6153 15:39:15.687663947 0 curl (3476) > ioctl fd=7(<4u>10.0.2.15:57045->10.0.2.3:53) request=541B argument=7FE7299FDCD0
+6154 15:39:15.687664395 0 curl (3476) < ioctl res=0
+6155 15:39:15.687673682 0 curl (3476) > recvfrom fd=7(<4u>10.0.2.15:57045->10.0.2.3:53) size=65536
+6156 15:39:15.687674385 0 curl (3476) < recvfrom res=93 data=.............example.org..............r...............r..`............r......... tuple=10.0.2.3:53->10.0.2.15:57045
+6157 15:39:15.687675861 0 curl (3476) > close fd=7(<4u>10.0.2.15:57045->10.0.2.3:53)
+6158 15:39:15.687685774 0 curl (3476) < close res=0
+6159 15:39:15.687694126 0 curl (3476) > openat dirfd=-100(AT_FDCWD) name=/etc/gai.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0
+6160 15:39:15.687702589 0 curl (3476) < openat fd=-2(ENOENT) dirfd=-100(AT_FDCWD) name=/etc/gai.conf flags=4097(O_RDONLY|O_CLOEXEC) mode=0 dev=0 ino=0
+6161 15:39:15.687704680 0 curl (3476) > futex addr=7FE72AA01344 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=2147483647
+6162 15:39:15.687705999 0 curl (3476) < futex res=0
+6163 15:39:15.687707061 0 curl (3476) > socket domain=16(AF_ROUTE|AF_NETLINK) type=524291 proto=0
+6164 15:39:15.687725726 0 curl (3476) < socket fd=7(<n>)
+6165 15:39:15.687726217 0 curl (3476) > bind fd=7(<n>)
+6166 15:39:15.687729243 0 curl (3476) < bind res=0 addr=NULL
+6167 15:39:15.687729938 0 curl (3476) > getsockname 
+6168 15:39:15.687730880 0 curl (3476) < getsockname 
+6169 15:39:15.687731473 0 curl (3476) > sendto fd=7(<n>) size=20 tuple=NULL
+6170 15:39:15.687745361 0 curl (3476) < sendto res=20 data=...........g........
+6171 15:39:15.687746243 0 curl (3476) > recvmsg fd=7(<n>)
+6172 15:39:15.687753721 0 curl (3476) < recvmsg res=252 size=252 data=L..........g................................lo..............................X... tuple=NULL msgcontrol=NULL
+6173 15:39:15.687755550 0 curl (3476) > recvmsg fd=7(<n>)
+6174 15:39:15.687757772 0 curl (3476) < recvmsg res=288 size=288 data=H..........g............................................................H....... tuple=NULL msgcontrol=NULL
+6175 15:39:15.687758708 0 curl (3476) > recvmsg fd=7(<n>)
+6176 15:39:15.687759301 0 curl (3476) < recvmsg res=20 size=20 data=...........g........ tuple=NULL msgcontrol=NULL
+6177 15:39:15.687760481 0 curl (3476) > close fd=7(<n>)
+6178 15:39:15.687763798 0 curl (3476) < close res=0
+6179 15:39:15.687766379 0 curl (3476) > socket domain=10(AF_INET6) type=524290 proto=0
+6180 15:39:15.687775576 0 curl (3476) < socket fd=7(<6>)
+6181 15:39:15.687776051 0 curl (3476) > connect fd=7(<6>) addr=2600:1408:ec00:36::1736:7f2f:80
+6182 15:39:15.687790059 0 curl (3476) < connect res=0 tuple=fd00::a00:27ff:fe42:d9f5:34450->2600:1408:ec00:36::1736:7f2f:80 fd=7(<6u>fd00::a00:27ff:fe42:d9f5:34450->2600:1408:ec00:36::1736:7f2f:80)
+6183 15:39:15.687790871 0 curl (3476) > getsockname 
+6184 15:39:15.687791479 0 curl (3476) < getsockname 
+6185 15:39:15.687792248 0 curl (3476) > connect fd=7(<6u>fd00::a00:27ff:fe42:d9f5:34450->2600:1408:ec00:36::1736:7f2f:80) addr=NULL
+6186 15:39:15.687793332 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1408:ec00:36::1736:7f2f:80)
+6187 15:39:15.687793827 0 curl (3476) > connect fd=7(<6u>:::0->2600:1408:ec00:36::1736:7f2f:80) addr=2600:1408:ec00:36::1736:7f2e:80
+6188 15:39:15.687795875 0 curl (3476) < connect res=0 tuple=fd00::a00:27ff:fe42:d9f5:48025->2600:1408:ec00:36::1736:7f2e:80 fd=7(<6u>fd00::a00:27ff:fe42:d9f5:48025->2600:1408:ec00:36::1736:7f2e:80)
+6189 15:39:15.687796410 0 curl (3476) > getsockname 
+6190 15:39:15.687796640 0 curl (3476) < getsockname 
+6191 15:39:15.687797108 0 curl (3476) > connect fd=7(<6u>fd00::a00:27ff:fe42:d9f5:48025->2600:1408:ec00:36::1736:7f2e:80) addr=NULL
+6192 15:39:15.687797571 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1408:ec00:36::1736:7f2e:80)
+6193 15:39:15.687798029 0 curl (3476) > connect fd=7(<6u>:::0->2600:1408:ec00:36::1736:7f2e:80) addr=2600:1406:bc00:17::6007:810d:80
+6194 15:39:15.687799416 0 curl (3476) < connect res=0 tuple=fd00::a00:27ff:fe42:d9f5:57788->2600:1406:bc00:17::6007:810d:80 fd=7(<6u>fd00::a00:27ff:fe42:d9f5:57788->2600:1406:bc00:17::6007:810d:80)
+6195 15:39:15.687799843 0 curl (3476) > getsockname 
+6196 15:39:15.687800061 0 curl (3476) < getsockname 
+6197 15:39:15.687800407 0 curl (3476) > connect fd=7(<6u>fd00::a00:27ff:fe42:d9f5:57788->2600:1406:bc00:17::6007:810d:80) addr=NULL
+6198 15:39:15.687800835 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1406:bc00:17::6007:810d:80)
+6199 15:39:15.687801283 0 curl (3476) > connect fd=7(<6u>:::0->2600:1406:bc00:17::6007:810d:80) addr=2600:1406:bc00:17::6007:8128:80
+6200 15:39:15.687802567 0 curl (3476) < connect res=0 tuple=fd00::a00:27ff:fe42:d9f5:34158->2600:1406:bc00:17::6007:8128:80 fd=7(<6u>fd00::a00:27ff:fe42:d9f5:34158->2600:1406:bc00:17::6007:8128:80)
+6201 15:39:15.687803024 0 curl (3476) > getsockname 
+6202 15:39:15.687803250 0 curl (3476) < getsockname 
+6203 15:39:15.687803587 0 curl (3476) > connect fd=7(<6u>fd00::a00:27ff:fe42:d9f5:34158->2600:1406:bc00:17::6007:8128:80) addr=NULL
+6204 15:39:15.687804027 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1406:bc00:17::6007:8128:80)
+6205 15:39:15.687804477 0 curl (3476) > connect fd=7(<4>:::0->2600:1406:bc00:17::6007:8128:80) addr=23.215.0.133:80
+6206 15:39:15.687808171 0 curl (3476) < connect res=0 tuple=::ffff:10.0.2.15:44986->::c00e:def5:6796:ffff:80 fd=7(<6u>::ffff:10.0.2.15:44986->2600:1406:bc00:17::6007:8128:80)
+6207 15:39:15.687808613 0 curl (3476) > getsockname 
+6208 15:39:15.687808929 0 curl (3476) < getsockname 
+6209 15:39:15.687809328 0 curl (3476) > connect fd=7(<6u>::ffff:10.0.2.15:44986->2600:1406:bc00:17::6007:8128:80) addr=NULL
+6210 15:39:15.687809830 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1406:bc00:17::6007:8128:80)
+6211 15:39:15.687810298 0 curl (3476) > connect fd=7(<4>:::0->2600:1406:bc00:17::6007:8128:80) addr=96.7.128.192:80
+6212 15:39:15.687812794 0 curl (3476) < connect res=0 tuple=::ffff:10.0.2.15:41195->::5646:3617:17a2:ad06:80 fd=7(<6u>::ffff:10.0.2.15:41195->2600:1406:bc00:17::6007:8128:80)
+6213 15:39:15.687813227 0 curl (3476) > getsockname 
+6214 15:39:15.687813472 0 curl (3476) < getsockname 
+6215 15:39:15.687813813 0 curl (3476) > connect fd=7(<6u>::ffff:10.0.2.15:41195->2600:1406:bc00:17::6007:8128:80) addr=NULL
+6216 15:39:15.687814238 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1406:bc00:17::6007:8128:80)
+6217 15:39:15.687814690 0 curl (3476) > connect fd=7(<4>:::0->2600:1406:bc00:17::6007:8128:80) addr=23.215.0.132:80
+6218 15:39:15.687815849 0 curl (3476) < connect res=0 tuple=::ffff:10.0.2.15:60680->::c00e:def5:6796:ffff:80 fd=7(<6u>::ffff:10.0.2.15:60680->2600:1406:bc00:17::6007:8128:80)
+6219 15:39:15.687816254 0 curl (3476) > getsockname 
+6220 15:39:15.687816479 0 curl (3476) < getsockname 
+6221 15:39:15.687816794 0 curl (3476) > connect fd=7(<6u>::ffff:10.0.2.15:60680->2600:1406:bc00:17::6007:8128:80) addr=NULL
+6222 15:39:15.687817217 0 curl (3476) < connect res=0 tuple=:::0->::3e01:0:0:0:0 fd=7(<6u>:::0->2600:1406:bc00:17::6007:8128:80)
+6223 15:39:15.687817664 0 curl (3476) > connect fd=7(<4>:::0->2600:1406:bc00:17::6007:8128:80) addr=96.7.128.186:80
+6224 15:39:15.687818650 0 curl (3476) < connect res=0 tuple=10.0.2.15:43002->0.0.0.0:80 fd=7(<4><unknown>)
+6225 15:39:15.687819070 0 curl (3476) > getsockname 
+6226 15:39:15.687819290 0 curl (3476) < getsockname 
+6227 15:39:15.687819643 0 curl (3476) > close fd=7(<4><unknown>)
+6228 15:39:15.687821158 0 curl (3476) < close res=0
+6229 15:39:15.687828554 0 curl (3476) > sendto fd=6(<u>) size=1 tuple=NULL
+6230 15:39:15.687835231 0 curl (3476) < sendto res=1 data=.
+6231 15:39:15.687836699 0 curl (3476) > switch next=3475(curl) pgft_maj=0 pgft_min=8 vm_size=92712 vm_rss=10740 vm_swap=0
+6232 15:39:15.687839166 0 curl (3475) < poll res=1 fds=5:u1 3:u0
+6233 15:39:15.687841881 0 curl (3475) > rt_sigaction 
+6234 15:39:15.687842806 0 curl (3475) < rt_sigaction 
+6235 15:39:15.687843248 0 curl (3475) > rt_sigaction 
+6236 15:39:15.687843780 0 curl (3475) < rt_sigaction 
+6237 15:39:15.687846814 0 curl (3475) > futex addr=558AE05F7440 op=128(FUTEX_PRIVATE_FLAG) val=2
+6238 15:39:15.687850509 0 curl (3475) > switch next=3476(curl) pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=10740 vm_swap=0
+6239 15:39:15.687851713 0 curl (3476) > futex addr=558AE05F7440 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=1
+6240 15:39:15.687853071 0 curl (3476) < futex res=1
+6241 15:39:15.687853546 0 curl (3476) > switch next=3475(curl) pgft_maj=0 pgft_min=8 vm_size=92712 vm_rss=10740 vm_swap=0
+6242 15:39:15.687854153 0 curl (3475) < futex res=0
+6243 15:39:15.687854775 0 curl (3475) > futex addr=558AE05F7440 op=129(FUTEX_PRIVATE_FLAG|FUTEX_WAKE) val=1
+6244 15:39:15.687854974 0 curl (3475) < futex res=0
+6245 15:39:15.687857530 0 curl (3475) > futex addr=7FE7299FF910 op=265(FUTEX_CLOCK_REALTIME|FUTEX_WAIT_BITSET) val=3476
+6246 15:39:15.687860726 0 curl (3475) > switch next=3476(curl) pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=10740 vm_swap=0
+6247 15:39:15.687869868 0 curl (3476) > rt_sigprocmask 
+6248 15:39:15.687870524 0 curl (3476) < rt_sigprocmask 
+6249 15:39:15.687871002 0 curl (3476) > madvise 
+6250 15:39:15.687916215 0 curl (3476) < madvise 
+6251 15:39:15.687916787 0 curl (3476) > exit 
+6252 15:39:15.687922625 0 curl (3476) > switch next=3475(curl) pgft_maj=0 pgft_min=9 vm_size=92712 vm_rss=8744 vm_swap=0
+6253 15:39:15.687923330 0 curl (3475) < futex res=0
+6254 15:39:15.687925434 0 curl (3475) > close fd=6(<u>)
+6255 15:39:15.687927993 0 curl (3475) < close res=0
+6256 15:39:15.687930131 0 curl (3475) > close fd=5(<u>)
+6257 15:39:15.687935131 0 curl (3475) < close res=0
+6258 15:39:15.687938939 0 curl (3475) > socket domain=2(AF_INET) type=1 proto=6
+6259 15:39:15.687948780 0 curl (3475) < socket fd=5(<4>)
+6260 15:39:15.687952998 0 curl (3475) > setsockopt 
+6261 15:39:15.687954911 0 curl (3475) < setsockopt res=0 fd=5(<4>) level=2(SOL_TCP) optname=0(UNKNOWN) val=.... optlen=4
+6262 15:39:15.687955920 0 curl (3475) > setsockopt 
+6263 15:39:15.687957233 0 curl (3475) < setsockopt res=0 fd=5(<4>) level=1(SOL_SOCKET) optname=9(SO_KEEPALIVE) val=1 optlen=4
+6264 15:39:15.687957981 0 curl (3475) > setsockopt 
+6265 15:39:15.687958509 0 curl (3475) < setsockopt res=0 fd=5(<4>) level=2(SOL_TCP) optname=0(UNKNOWN) val=<... optlen=4
+6266 15:39:15.687958922 0 curl (3475) > setsockopt 
+6267 15:39:15.687959205 0 curl (3475) < setsockopt res=0 fd=5(<4>) level=2(SOL_TCP) optname=0(UNKNOWN) val=<... optlen=4
+6268 15:39:15.687959929 0 curl (3475) > fcntl fd=5(<4>) cmd=4(F_GETFL)
+6269 15:39:15.687960737 0 curl (3475) < fcntl res=2(<f>/dev/pts/1) fd=5(<4>) cmd=4(F_GETFL)
+6270 15:39:15.687961260 0 curl (3475) > fcntl fd=5(<4>) cmd=5(F_SETFL)
+6271 15:39:15.687961690 0 curl (3475) < fcntl res=0(<f>/dev/pts/1) fd=5(<4>) cmd=5(F_SETFL)
+6272 15:39:15.687962553 0 curl (3475) > connect fd=5(<4>) addr=23.215.0.133:80
+6273 15:39:15.688808518 0 curl (3475) < connect res=-115(EINPROGRESS) tuple=10.0.2.15:41176->23.215.0.133:80 fd=5(<4t>10.0.2.15:41176->23.215.0.133:80)
+6274 15:39:15.688820607 0 curl (3475) > poll fds=5:4206 timeout=0
+6275 15:39:15.688824945 0 curl (3475) < poll res=0 fds=5:40
+6276 15:39:15.688827063 0 curl (3475) > rt_sigaction 
+6277 15:39:15.688828581 0 curl (3475) < rt_sigaction 
+6278 15:39:15.688830616 0 curl (3475) > poll fds=5:44 3:u1 timeout=3
+6279 15:39:15.688838767 0 curl (3475) > switch next=3476(curl) pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=8744 vm_swap=0
+6280 15:39:15.688842972 0 curl (3476) > procexit status=0 ret=0 sig=0 core=0 reaper_tid=0
+6827 15:39:15.692615834 0 curl (3475) < poll res=0 fds=5:40 3:u0
+6828 15:39:15.692623587 0 curl (3475) > rt_sigaction 
+6829 15:39:15.692624942 0 curl (3475) < rt_sigaction 
+6830 15:39:15.692625640 0 curl (3475) > rt_sigaction 
+6831 15:39:15.692626420 0 curl (3475) < rt_sigaction 
+6832 15:39:15.692628265 0 curl (3475) > poll fds=5:4206 timeout=0
+6833 15:39:15.692629785 0 curl (3475) < poll res=0 fds=5:40
+6834 15:39:15.692631247 0 curl (3475) > rt_sigaction 
+6835 15:39:15.692631623 0 curl (3475) < rt_sigaction 
+6836 15:39:15.692633683 0 curl (3475) > poll fds=5:44 3:u1 timeout=5
+6837 15:39:15.692638855 0 curl (3475) > switch next=17 pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=8744 vm_swap=0
+6898 15:39:15.697780390 0 curl (3475) < poll res=0 fds=5:40 3:u0
+6899 15:39:15.697787170 0 curl (3475) > rt_sigaction 
+6900 15:39:15.697788245 0 curl (3475) < rt_sigaction 
+6901 15:39:15.697788700 0 curl (3475) > rt_sigaction 
+6902 15:39:15.697789349 0 curl (3475) < rt_sigaction 
+6903 15:39:15.697790894 0 curl (3475) > poll fds=5:4206 timeout=0
+6904 15:39:15.697792114 0 curl (3475) < poll res=0 fds=5:40
+6905 15:39:15.697793258 0 curl (3475) > rt_sigaction 
+6906 15:39:15.697793493 0 curl (3475) < rt_sigaction 
+6907 15:39:15.697795094 0 curl (3475) > poll fds=5:44 3:u1 timeout=1
+6908 15:39:15.697800433 0 curl (3475) > switch next=0 pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=8744 vm_swap=0
+6910 15:39:15.698927929 0 curl (3475) < poll res=0 fds=5:40 3:u0
+6911 15:39:15.698931249 0 curl (3475) > rt_sigaction 
+6912 15:39:15.698932009 0 curl (3475) < rt_sigaction 
+6913 15:39:15.698932402 0 curl (3475) > rt_sigaction 
+6914 15:39:15.698932720 0 curl (3475) < rt_sigaction 
+6915 15:39:15.698933515 0 curl (3475) > poll fds=5:4206 timeout=0
+6916 15:39:15.698934408 0 curl (3475) < poll res=0 fds=5:40
+6917 15:39:15.698935278 0 curl (3475) > rt_sigaction 
+6918 15:39:15.698935515 0 curl (3475) < rt_sigaction 
+6919 15:39:15.698936783 0 curl (3475) > poll fds=5:44 3:u1 timeout=190
+6920 15:39:15.698940490 0 curl (3475) > switch next=0 pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=8744 vm_swap=0
+7032 15:39:15.830845617 0 curl (3475) < poll res=1 fds=5:44 3:u0
+7033 15:39:15.830868948 0 curl (3475) > rt_sigaction 
+7034 15:39:15.830872187 0 curl (3475) < rt_sigaction 
+7035 15:39:15.830873118 0 curl (3475) > rt_sigaction 
+7036 15:39:15.830874081 0 curl (3475) < rt_sigaction 
+7037 15:39:15.830877876 0 curl (3475) > poll fds=5:4206 timeout=0
+7038 15:39:15.830880606 0 curl (3475) < poll res=1 fds=5:4204
+7039 15:39:15.830882812 0 curl (3475) > getsockopt 
+7040 15:39:15.830888972 0 curl (3475) < getsockopt res=0 fd=5(<4t>10.0.2.15:41176->23.215.0.133:80) level=1(SOL_SOCKET) optname=4(SO_ERROR) val=0 optlen=4
+7041 15:39:15.830893497 0 curl (3475) > getpeername 
+7042 15:39:15.830895755 0 curl (3475) < getpeername 
+7043 15:39:15.830906601 0 curl (3475) > getsockname 
+7044 15:39:15.830908315 0 curl (3475) < getsockname 
+7045 15:39:15.830931298 0 curl (3475) > sendto fd=5(<4t>10.0.2.15:41176->23.215.0.133:80) size=75 tuple=NULL
+7046 15:39:15.836342816 0 curl (3475) < sendto res=75 data=GET / HTTP/1.1..Host: example.org..User-Agent: curl/7.76.1..Accept: */*....
+7047 15:39:15.836365918 0 curl (3475) > poll fds=5:4183 timeout=0
+7048 15:39:15.836372934 0 curl (3475) < poll res=0 fds=5:40
+7049 15:39:15.836376314 0 curl (3475) > rt_sigaction 
+7050 15:39:15.836378935 0 curl (3475) < rt_sigaction 
+7051 15:39:15.836382853 0 curl (3475) > poll fds=5:41 3:u1 timeout=53
+7052 15:39:15.836396155 0 curl (3475) > switch next=16 pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=8744 vm_swap=0
+7155 15:39:15.889804416 0 curl (3475) < poll res=0 fds=5:40 3:u0
+7156 15:39:15.889826846 0 curl (3475) > rt_sigaction 
+7157 15:39:15.889830137 0 curl (3475) < rt_sigaction 
+7158 15:39:15.889830964 0 curl (3475) > rt_sigaction 
+7159 15:39:15.889832398 0 curl (3475) < rt_sigaction 
+7160 15:39:15.889835532 0 curl (3475) > poll fds=5:4183 timeout=0
+7161 15:39:15.889838360 0 curl (3475) < poll res=0 fds=5:40
+7162 15:39:15.889840822 0 curl (3475) > rt_sigaction 
+7163 15:39:15.889841172 0 curl (3475) < rt_sigaction 
+7164 15:39:15.889845118 0 curl (3475) > poll fds=5:41 3:u1 timeout=1000
+7165 15:39:15.889860747 0 curl (3475) > switch next=0 pgft_maj=0 pgft_min=478 vm_size=92712 vm_rss=8744 vm_swap=0
+7215 15:39:15.937593655 0 curl (3475) < poll res=1 fds=5:41 3:u0
+7216 15:39:15.937617021 0 curl (3475) > rt_sigaction 
+7217 15:39:15.937619944 0 curl (3475) < rt_sigaction 
+7218 15:39:15.937620898 0 curl (3475) > rt_sigaction 
+7219 15:39:15.937622198 0 curl (3475) < rt_sigaction 
+7220 15:39:15.937625468 0 curl (3475) > poll fds=5:4183 timeout=0
+7221 15:39:15.937628154 0 curl (3475) < poll res=1 fds=5:481
+7222 15:39:15.937630993 0 curl (3475) > recvfrom fd=5(<4t>10.0.2.15:41176->23.215.0.133:80) size=102400
+7223 15:39:15.937860957 0 curl (3475) < recvfrom res=1518 data=HTTP/1.1 200 OK..Content-Type: text/html..ETag: "84238dfc8092e5d9c0dac8ef93371a0 tuple=23.215.0.133:80->10.0.2.15:41176
+7224 15:39:15.937919165 0 curl (3475) > fstat fd=1(<f>/dev/pts/1)
+7225 15:39:15.937927705 0 curl (3475) < fstat res=0
+7226 15:39:15.937930455 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=1024
+7227 15:39:15.937970394 0 curl (3475) < write res=1024 data=<!doctype html>.<html>.<head>.    <title>Example Domain</title>..    <meta chars
+7228 15:39:15.937972861 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=45
+7229 15:39:15.937974998 0 curl (3475) < write res=45 data=tive examples in documents. You may use this.
+7230 15:39:15.937976830 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=82
+7231 15:39:15.937978653 0 curl (3475) < write res=82 data=    domain in literature without prior coordination or asking for permission.</p
+7232 15:39:15.937980419 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=82
+7233 15:39:15.937981812 0 curl (3475) < write res=82 data=    <p><a href="https://www.iana.org/domains/example">More information...</a></p
+7234 15:39:15.937982648 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=7
+7235 15:39:15.937983695 0 curl (3475) < write res=7 data=</div>.
+7236 15:39:15.937984631 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=8
+7237 15:39:15.937985664 0 curl (3475) < write res=8 data=</body>.
+7238 15:39:15.937986463 0 curl (3475) > write fd=1(<f>/dev/pts/1) size=8
+7239 15:39:15.937987422 0 curl (3475) < write res=8 data=</html>.
+7240 15:39:15.938005829 0 curl (3475) > rt_sigaction 
+7241 15:39:15.938007385 0 curl (3475) < rt_sigaction 
+7242 15:39:15.938011617 0 curl (3475) > rt_sigaction 
+7243 15:39:15.938012043 0 curl (3475) < rt_sigaction 
+7244 15:39:15.938014906 0 curl (3475) > rt_sigaction 
+7245 15:39:15.938015340 0 curl (3475) < rt_sigaction 
+7246 15:39:15.938015870 0 curl (3475) > rt_sigaction 
+7247 15:39:15.938016216 0 curl (3475) < rt_sigaction 
+7248 15:39:15.938017384 0 curl (3475) > rt_sigaction 
+7249 15:39:15.938017726 0 curl (3475) < rt_sigaction 
+7250 15:39:15.938018178 0 curl (3475) > rt_sigaction 
+7251 15:39:15.938018479 0 curl (3475) < rt_sigaction 
+7252 15:39:15.938023384 0 curl (3475) > rt_sigaction 
+7253 15:39:15.938023694 0 curl (3475) < rt_sigaction 
+7254 15:39:15.938024941 0 curl (3475) > close fd=3(<u>)
+7255 15:39:15.938048778 0 curl (3475) < close res=0
+7256 15:39:15.938049819 0 curl (3475) > close fd=4(<u>)
+7257 15:39:15.938059698 0 curl (3475) < close res=0
+7258 15:39:15.938064777 0 curl (3475) > rt_sigaction 
+7259 15:39:15.938065321 0 curl (3475) < rt_sigaction 
+7260 15:39:15.938075178 0 curl (3475) > rt_sigaction 
+7261 15:39:15.938075565 0 curl (3475) < rt_sigaction 
+7262 15:39:15.938076029 0 curl (3475) > rt_sigaction 
+7263 15:39:15.938076338 0 curl (3475) < rt_sigaction 
+7264 15:39:15.938078454 0 curl (3475) > rt_sigaction 
+7265 15:39:15.938078759 0 curl (3475) < rt_sigaction 
+7266 15:39:15.938084000 0 curl (3475) > rt_sigaction 
+7267 15:39:15.938084340 0 curl (3475) < rt_sigaction 
+7268 15:39:15.938084805 0 curl (3475) > rt_sigaction 
+7269 15:39:15.938085154 0 curl (3475) < rt_sigaction 
+7270 15:39:15.938090078 0 curl (3475) > close fd=5(<4t>10.0.2.15:41176->23.215.0.133:80)
+7271 15:39:15.940563765 0 curl (3475) > switch next=17 pgft_maj=0 pgft_min=480 vm_size=92712 vm_rss=8872 vm_swap=0
+7294 15:39:15.941172166 0 curl (3475) < close res=0
+7295 15:39:15.941212127 0 curl (3475) > rt_sigaction 
+7296 15:39:15.941213259 0 curl (3475) < rt_sigaction 
+7297 15:39:15.941214709 0 curl (3475) > rt_sigaction 
+7298 15:39:15.941214970 0 curl (3475) < rt_sigaction 
+7299 15:39:15.941215229 0 curl (3475) > rt_sigaction 
+7300 15:39:15.941215397 0 curl (3475) < rt_sigaction 
+7301 15:39:15.941219950 0 curl (3475) > rt_sigaction 
+7302 15:39:15.941220116 0 curl (3475) < rt_sigaction 
+7303 15:39:15.941773783 0 curl (3475) > exit_group 
+7304 15:39:15.942044952 0 curl (3475) > procexit status=0 ret=0 sig=0 core=0 reaper_tid=0

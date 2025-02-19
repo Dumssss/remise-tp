@@ -264,3 +264,5 @@ Key to Flags:
   127cc2:       b8 03 00 00 00          mov    $0x3,%eax
   127cc7:       0f 05                   syscall
 ```
+
+Suite --> [Partie 2](./part2.md)
