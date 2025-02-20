@@ -382,3 +382,4 @@ sudo ls -l /etc/shadow
 [dums@node1 ~]$ rm /tmp/public_folder/dont_readme.txt
 rm: cannot remove '/tmp/public_folder/dont_readme.txt': Operation not permitted
 ```
+Suite --> [Partie 5](./part5.md)
