@@ -168,3 +168,19 @@ switch
 
 - ajoutez un filtrage des *syscalls* dans le fichier `calculatrice.service`
 - vérifiez que l'exploitation est devenue plus compliquée
+
+```ps
+[dums@vbox ~]$ sudo cat /etc/systemd/system/calculatrice.service
+[Unit]
+Description=Super serveur calculatrice
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/calc.py
+User=calculatrice
+Restart=always
+
+SystemCallFilter=~fork clone vfork
+
+[Install]
+WantedBy=multi-user.target
+```

@@ -1,0 +1,13 @@
+[Unit]
+Description=Super serveur calculatrice
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/calc.py
+User=calculatrice
+Restart=always
+
+SystemCallFilter=~fork clone vfork
+#SystemCallFilter=~ptrace process_vm_readv process_vm_writev
+
+[Install]
+WantedBy=multi-user.target
