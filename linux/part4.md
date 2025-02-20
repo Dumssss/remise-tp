@@ -266,52 +266,119 @@ auth            required        pam_wheel.so use_uid
 
 ## 2. Files and permissions
 
-**Dans un OS, en particulier Linux, on dit souvent que "tout est fichier".**
-
-En effet, que ce soit les programmes (que ce soit `ls`, ou Firefox, ou Steam, ou le kernel), les fichiers personnels, les fichiers de configuration, et bien d'autres, **l'ensemble des composants d'un OS, et tout ce qu'on peut y ajouter se résume à un gros tas de fichiers.**
-
-Gérer correctement les permissions des fichiers est une étape essentielle dans le renforcement d'une machine.
-
-**C'est la première barrière de sécurité, (beaucoup) trop souvent négligée, alors qu'elle est extrêmement efficace et robuste.**
-
 ### A. Listing POSIX permissions
 
 🌞 **Déterminer les permissions des fichiers/dossiers...**
 
 - le fichier qui contient la liste des utilisateurs
+```ps
+[dums@node1 ~]$ ls -l /etc/passwd
+```
 - le fichier qui contient la liste des hashes des mots de passe des utilisateurs
+```ps
+sudo ls -l /etc/shadow
+```
 - le fichier de configuration du serveur OpenSSH
+```ps
+[dums@node1 ~]$ ls -l /etc/ssh/sshd_config
+```
 - le répertoire personnel de l'utilisateur `root`
+```ps
+[dums@node1 ~]$ ls -ld /root
+```
 - le répertoire personnel de votre utilisateur
+```ps
+[dums@node1 ~]$ ls -ld ~
+```
 - le programme `ls`
+```ps
+[dums@node1 ~]$ ls -l /bin/ls
+```
 - le programme `systemctl`
-
-> POSIX c'est le nom d'un standard qui regroupe plein de concepts avec lesquels vous êtes finalement déjà familiers. Les permissions rwx qu'on retrouve sous les OS Linux (et MacOS, et BSD, et d'autres) font partie de ce standard et sont donc appelées "permissions POSIX".
-
-![Windows POSIX](./img/posix_compliant.png)
+```ps
+[dums@node1 ~]$ ls -l /bin/systemctl
+```
 
 ### B. Protect a file using permissions
 
 🌞 **Restreindre l'accès à un fichier personnel**
 
 - créer un fichier nommé `dont_readme.txt` (avec le contenu de votre choix)
+```ps
+[dums@node1 ~]$ touch /tmp/public_folder/dont_readme.txt && echo "Ce fichier est privé" > /tmp/public_folder/dont_readme.txt
+```
 - il doit se trouver dans un dossier lisible et écrivable par tout le monde
+```ps
+[dums@node1 ~]$ mkdir /tmp/public_folder
+[dums@node1 ~]$ chmod 777 /tmp/public_folder
+```
 - faites en sorte que seul votre utilisateur (pas votre groupe) puisse lire ou modifier ce fichier
 - personne ne doit pouvoir l'exécuter
+```ps
+[dums@node1 ~]$ chmod 600 /tmp/public_folder/dont_readme.txt
+```
 - prouvez que :
   - votre utilisateur peut le lire
+  ```ps
+  [dums@node1 ~]$ cat /tmp/public_folder/dont_readme.txt
+  Ce fichier est privé
+  ```
   - votre utilisateur peut le modifier
+  ```ps
+    [dums@node1 ~]$ echo "Ce fichier est privé sauf pour dums" >> /tmp/public_folder/dont_readme.txt
+  [dums@node1 ~]$ cat /tmp/public_folder/dont_readme.txt
+  Ce fichier est privé
+  Ce fichier est privé sauf pour dums
+  ```
   - l'utilisateur `meow` ne peut pas y toucher
+  ```ps
+  [dums@node1 ~]$ sudo -u meow cat /tmp/public_folder/dont_readme.txt
+  [sudo] password for dums:
+  cat: /tmp/public_folder/dont_readme.txt: Permission denied
+  ```
   - l'utilisateur `root` peut quand même y toucher
-
-> C'est l'un des "superpouvoirs" de `root` : contourner les permissions POSIX (les permissions `rwx`). On verra bien assez tôt que `root` n'a pas de "superpouvoirs" mais que ces contournements sont liés à une mécanique qu'on appelle les *capabilites*. C'est pour plus tard ! :)
+  ```ps
+    [dums@node1 ~]$ sudo cat /tmp/public_folder/dont_readme.txt
+  Ce fichier est privé
+  Ce fichier est privé sauf pour dums
+  ```
 
 ### C. Extended attributes
 
 🌞 **Lister tous les programmes qui ont le bit SUID activé**
 
+```ps
+[dums@node1 ~]$ find / -perm -4000 -type f 2>/dev/null
+/usr/sbin/grub2-set-bootflag
+/usr/sbin/pam_timestamp_check
+/usr/sbin/unix_chkpwd
+/usr/bin/chage
+/usr/bin/mount
+/usr/bin/su
+/usr/bin/gpasswd
+/usr/bin/umount
+/usr/bin/newgrp
+/usr/bin/sudo
+/usr/bin/passwd
+/usr/bin/crontab
+```
+
 🌞 **Rendre le fichier `dont_readme.txt` immuable**
 
-- ça se fait avec les attributs étendus
-- "immuable" ça veut dire qu'il ne peut plus être modifié DU TOUT : il est donc en read-only
+```ps
+[dums@node1 ~]$ sudo chattr +i /tmp/public_folder/dont_readme.txt
+[dums@node1 ~]$ lsattr /tmp/public_folder/dont_readme.txt
+----i---------e------- /tmp/public_folder/dont_readme.txt
+```
 - prouvez que le fichier ne peut plus être modifié par **personne**
+
+```ps
+[dums@node1 ~]$ echo "Fichier pas immuable" >> /tmp/public_folder/dont_readme.txt
+-bash: /tmp/public_folder/dont_readme.txt: Operation not permitted
+
+[dums@node1 ~]$ sudo echo "immuable" >> /tmp/public_folder/dont_readme.txt
+-bash: /tmp/public_folder/dont_readme.txt: Operation not permitted
+
+[dums@node1 ~]$ rm /tmp/public_folder/dont_readme.txt
+rm: cannot remove '/tmp/public_folder/dont_readme.txt': Operation not permitted
+```
