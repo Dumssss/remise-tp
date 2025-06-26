@@ -14,7 +14,7 @@
 
 
 # I. Une première VM
-Pour le moment, la conf, on s'en branle, on va juste allumer la VM ! Komsa :
+Pour le moment, la conf n'importe peu, on va juste allumer la VM :
 
 ```bash
 $ vagrant up
