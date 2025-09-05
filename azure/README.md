@@ -49,34 +49,24 @@ The key's randomart image is:
 
 ### C. Agent SSH
 
-Afin de ne pas systématiquement saisir le mot de passe d'une clé à chaque fois qu'on l'utilise, **parce que c'est très très chiant**, on peut utiliser un **Agent SSH**.
-
-Un programme qui tourne en fond, auquel on ajoute nos clés SSH, qui peuvent ensuite être utilisée dès qu'on fait une connexion SSH.
-
-L'avantage est qu'on ne saisit le password qu'au moment de l'ajout de la clé SSH à l'agent !
-
-???+ info
-
-    Oh et y'a moyen de le faire sous tous les OS. Comme d'hab, sous Linux/MacOS, moins relou :d  
-    Peu importe l'OS, ça finira par taper un ptit `ssh-add` pour ajouter votre clé à l'agent normalement !
-
 🌞 **Configurer un agent SSH sur votre poste**
 
-- détaillez-moi toute la conf ici que vous aurez fait
-
-![Logo OpenSSH](../../assets/img/logo_openssh.png)
+```PS
+PS C:\WINDOWS\system32> Set-Service -Name ssh-agent -StartupType Manual
+PS C:\WINDOWS\system32> Start-Service ssh-agent
+PS C:\WINDOWS\system32> ssh-add $env:USERPROFILE\.ssh\cloud_tp1
+Enter passphrase for C:\Users\cleme\.ssh\cloud_tp1:
+Identity added: C:\Users\cleme\.ssh\cloud_tp1 (cleme@laptop-clement)
+PS C:\WINDOWS\system32> ssh-add -l
+256 SHA256:K1s0WaWkRnFRE6UUSZ/ikDm3dPdAwkT5vhMiP7wWmks cleme@laptop-clement (ECDSA)
+```
 
 # II. Spawn des VMs
-
-Pour tous les TPs avec Azure, lorsqu'il s'agit de VM, je vous laisse le choix de l'OS (un Linux quand même). Ce sera pas le coeur de notre sujet.
-
-On commence avec la WebUI Azure ! ~~berk~~
 
 ## 1. Depuis la WebUI
 
 ➜ **Faites du cliclic partout dans la WebUI Azure pour créer une VM dans Azure.**
 
-![Clicking intensifies](../../assets/img/meme_clicks.png)
 
 🌞 **Connectez-vous en SSH à la VM pour preuve**
 
