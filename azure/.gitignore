@@ -1,0 +1,8 @@
+# Terraform
+
+*.tfvars
+*.tfstate
+*.tfstate.*
+*.exe
+*.hcl
+*.txt
